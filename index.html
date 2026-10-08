@@ -1,694 +1,454 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Central Annual Conference 2026 | Medicine Club Bangladesh</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>27th Central Annual Conference | Medicine Club</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              teal: '#0d9488',
-              tealDark: '#0f766e',
-              tealLight: '#ccfbf1',
-              navy: '#0f172a',
-              slate: '#1e293b',
-              accent: '#e11d48',
-              gold: '#f59e0b'
-            }
-          },
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            serif: ['"Playfair Display"', 'serif'],
-          }
-        }
-      }
-    }
-  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    /* Custom scrollbar and subtle glowing animations */
-    ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: #f1f5f9; }
-    ::-webkit-scrollbar-thumb { background: #0d9488; border-radius: 4px; }
-    .glass-nav {
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-    }
-    .hero-pattern {
-      background-color: #042f2e;
-      background-image: radial-gradient(rgba(20, 184, 166, 0.25) 1px, transparent 1px);
-      background-size: 28px 28px;
-    }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
   </style>
 </head>
-<body class="font-sans text-slate-800 bg-slate-50 antialiased selection:bg-teal-500 selection:text-white">
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-red-600 selection:text-white">
 
-  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none bg-slate-900 text-white px-5 py-3 rounded-xl shadow-2xl flex items-center gap-3 border border-teal-500/30">
-    <svg class="w-5 h-5 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-    <span id="toast-message" class="text-sm font-medium">Copied to clipboard</span>
-  </div>
-
-  <header class="fixed top-0 left-0 right-0 z-40 glass-nav border-b border-slate-200/80 transition-all duration-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      <!-- Logo & Club Identifier -->
-      <a href="#" class="flex items-center gap-3 group">
-        <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-teal-700 to-teal-500 flex items-center justify-center text-white shadow-md shadow-teal-700/20 group-hover:scale-105 transition-transform">
-          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M19 10.5h-5.5V5c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v5.5H5c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5h5.5V19c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-5.5H19c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5z"/>
-          </svg>
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-2xl bg-red-50 border border-red-200 flex items-center justify-center p-1.5 shadow-sm">
+            <svg viewBox="0 0 100 80" class="w-full h-full fill-red-700">
+              <path d="M5 10 h18 v60 h-18 z M23 10 l16 16 v44 h-16 z M45 10 h12 v60 h-12 z M63 10 h25 v16 h-13 v32 h13 v12 h-25 z" />
+            </svg>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="font-black text-xl text-slate-900 tracking-tight">MEDICINE CLUB</span>
+              <span class="text-[10px] bg-red-100 text-red-700 font-bold px-2 py-0.5 rounded-full border border-red-200">Est. 1981</span>
+            </div>
+            <span class="text-xs text-red-700 font-semibold block">27th Central Annual Conference • Savar</span>
+          </div>
         </div>
-        <div>
-          <span class="block text-lg font-extrabold tracking-tight text-slate-900 leading-tight">MEDICINE CLUB</span>
-          <span class="block text-[11px] font-semibold text-teal-700 tracking-wider uppercase">Central Committee · Bangladesh</span>
+        
+        <div class="hidden lg:flex items-center gap-6 font-semibold text-sm text-slate-600">
+          <a href="#schedule" class="hover:text-red-600 transition">Schedule</a>
+          <a href="#guests" class="hover:text-red-600 transition">Dignitaries</a>
+          <a href="#fees" class="hover:text-red-600 transition">Registration Fees</a>
+          <a href="#about" class="hover:text-red-600 transition">Heritage</a>
+          <a href="#units" class="hover:text-red-600 transition">Units (34)</a>
+          <a href="#sponsorship" class="hover:text-red-600 transition">Sponsorship</a>
+          <a href="#contact" class="hover:text-red-600 transition">Inquiry</a>
+          
+          <a href="invitation-letter.pdf" target="_blank" class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 transition font-bold text-xs flex items-center gap-2 border border-slate-300">
+            <i class="fa-solid fa-file-arrow-down text-red-600"></i>
+            <span>Official Invitation Letter</span>
+          </a>
+
+          <a href="https://forms.gle/yifQK8Sw6WMCkWch6" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white transition shadow-md shadow-red-600/20 flex items-center gap-2">
+            <span>Register Now</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+          </a>
         </div>
-      </a>
-
-      <!-- Desktop Navigation Menu -->
-      <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-600">
-        <a href="#about" class="hover:text-teal-600 transition-colors">About</a>
-        <a href="#schedule" class="hover:text-teal-600 transition-colors">Schedule</a>
-        <a href="#registration" class="hover:text-teal-600 transition-colors">Registration</a>
-        <a href="#notices" class="hover:text-teal-600 transition-colors">Notices & Circulars</a>
-        <a href="#contact" class="hover:text-teal-600 transition-colors">Emergency Desk</a>
-      </nav>
-
-      <!-- Desktop Action CTA -->
-      <div class="hidden md:flex items-center gap-4">
-        <a href="#registration" class="px-5 py-2.5 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-semibold text-sm shadow-md shadow-teal-600/30 hover:shadow-lg transition-all duration-200">
-          Register Delegate
-        </a>
       </div>
-
-      <!-- Mobile Hamburger Button -->
-      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100" aria-label="Toggle Menu">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-      </button>
     </div>
+  </nav>
 
-    <!-- Mobile Slide-down Menu -->
-    <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-6 bg-white border-b border-slate-200 shadow-xl space-y-3 text-base font-semibold">
-      <a href="#about" class="block py-2 text-slate-700 hover:text-teal-600" onclick="toggleMenu()">About</a>
-      <a href="#schedule" class="block py-2 text-slate-700 hover:text-teal-600" onclick="toggleMenu()">Schedule</a>
-      <a href="#registration" class="block py-2 text-slate-700 hover:text-teal-600" onclick="toggleMenu()">Registration</a>
-      <a href="#notices" class="block py-2 text-slate-700 hover:text-teal-600" onclick="toggleMenu()">Notices & Circulars</a>
-      <a href="#contact" class="block py-2 text-slate-700 hover:text-teal-600" onclick="toggleMenu()">Emergency Desk</a>
-      <a href="#registration" class="block text-center w-full py-3 rounded-xl bg-teal-600 text-white mt-2" onclick="toggleMenu()">Register Delegate</a>
-    </div>
-  </header>
-
-  <section class="relative pt-32 pb-24 lg:pt-40 lg:pb-32 hero-pattern text-white overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-b from-teal-950/80 via-teal-900/60 to-slate-950 pointer-events-none"></div>
-
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <!-- Tag / Badge -->
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-teal-500/20 border border-teal-400/30 text-teal-300 text-xs sm:text-sm font-semibold tracking-wide mb-6">
-        <span class="w-2 h-2 rounded-full bg-teal-400 animate-ping"></span>
-        Official Annual Assembly · 2026
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-slate-950 via-slate-900 to-red-950 text-white py-16 sm:py-24 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(#dc2626_1px,transparent_1px)] [background-size:24px_24px] opacity-15"></div>
+    <div class="max-w-5xl mx-auto px-4 text-center relative z-10">
+      
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold bg-red-500/20 text-red-300 border border-red-500/30 mb-6">
+        <i class="fa-solid fa-star text-amber-400"></i> Arranged by Central Committee • Hosted by GSVMC Unit
       </div>
-
-      <!-- Main Title -->
-      <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight max-w-4xl mx-auto leading-tight sm:leading-tight mb-6">
-        Central Annual Conference & National Delegate Council
+      
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 leading-tight">
+        27th Central Annual Conference 2026
       </h1>
-
-      <p class="text-base sm:text-xl text-teal-100/90 max-w-2xl mx-auto font-light leading-relaxed mb-10">
-        Uniting medical students and young physicians across Bangladesh. Advancing healthcare service, academic excellence, and humanitarian leadership.
+      <p class="text-base sm:text-xl text-red-200 font-medium max-w-3xl mx-auto mb-8 leading-relaxed">
+        "Learn & let others learn to serve humanity in the best possible manner."
       </p>
 
-      <!-- Key Event Meta Info Chips -->
-      <div class="flex flex-wrap justify-center items-center gap-4 sm:gap-6 text-sm font-medium mb-12">
-        <div class="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/10 backdrop-blur border border-white/15">
-          <svg class="w-5 h-5 text-teal-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-          <span>October 15, 2026</span>
+      <!-- Key Details Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-10 text-left">
+        <div class="bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl p-4 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-red-500/20 flex items-center justify-center text-red-300 text-xl"><i class="fa-regular fa-calendar-days"></i></div>
+          <div>
+            <span class="text-xs text-slate-300 block uppercase font-semibold">Date</span>
+            <span class="font-bold text-white text-base">14, 15 & 16 October, 2026</span>
+          </div>
         </div>
-        <div class="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/10 backdrop-blur border border-white/15">
-          <svg class="w-5 h-5 text-teal-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-          <span>Dhaka, Bangladesh</span>
+        <div class="bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl p-4 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-red-500/20 flex items-center justify-center text-red-300 text-xl"><i class="fa-solid fa-location-dot"></i></div>
+          <div>
+            <span class="text-xs text-slate-300 block uppercase font-semibold">Venue</span>
+            <span class="font-bold text-white text-base">PHA Bhaban, GK, Savar</span>
+          </div>
         </div>
-      </div>
-
-      <!-- Live Countdown Card -->
-      <div class="max-w-2xl mx-auto bg-slate-900/80 backdrop-blur-md rounded-2xl p-6 border border-teal-500/20 shadow-2xl mb-12">
-        <h3 class="text-xs uppercase tracking-widest text-teal-400 font-bold mb-4">Event Countdown</h3>
-        <div class="grid grid-cols-4 gap-3 sm:gap-4 text-center">
-          <div class="bg-slate-800/80 p-3 sm:p-4 rounded-xl border border-slate-700">
-            <span id="days" class="block text-2xl sm:text-4xl font-extrabold text-white">05</span>
-            <span class="text-[11px] sm:text-xs text-slate-400 uppercase tracking-wider font-semibold">Days</span>
-          </div>
-          <div class="bg-slate-800/80 p-3 sm:p-4 rounded-xl border border-slate-700">
-            <span id="hours" class="block text-2xl sm:text-4xl font-extrabold text-white">18</span>
-            <span class="text-[11px] sm:text-xs text-slate-400 uppercase tracking-wider font-semibold">Hours</span>
-          </div>
-          <div class="bg-slate-800/80 p-3 sm:p-4 rounded-xl border border-slate-700">
-            <span id="minutes" class="block text-2xl sm:text-4xl font-extrabold text-white">42</span>
-            <span class="text-[11px] sm:text-xs text-slate-400 uppercase tracking-wider font-semibold">Mins</span>
-          </div>
-          <div class="bg-slate-800/80 p-3 sm:p-4 rounded-xl border border-slate-700">
-            <span id="seconds" class="block text-2xl sm:text-4xl font-extrabold text-teal-400">12</span>
-            <span class="text-[11px] sm:text-xs text-slate-400 uppercase tracking-wider font-semibold">Secs</span>
+        <div class="bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl p-4 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-red-500/20 flex items-center justify-center text-red-300 text-xl"><i class="fa-solid fa-users"></i></div>
+          <div>
+            <span class="text-xs text-slate-300 block uppercase font-semibold">Delegation</span>
+            <span class="font-bold text-white text-base">1,000+ Doctors & Students</span>
           </div>
         </div>
       </div>
 
-      <!-- Hero Call To Actions -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="#registration" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold shadow-lg shadow-teal-500/30 hover:scale-[1.02] transition-transform">
-          Register as Delegate
+      <!-- Live Dynamic Countdown -->
+      <div class="bg-black/40 border border-red-500/30 rounded-2xl p-6 max-w-2xl mx-auto mb-10">
+        <span class="text-xs font-semibold text-red-400 tracking-widest block mb-4 uppercase">Conference Inception Countdown</span>
+        <div class="grid grid-cols-4 gap-3 text-center">
+          <div class="bg-slate-900/80 rounded-xl p-3 border border-white/5"><span id="days" class="block text-2xl sm:text-4xl font-extrabold text-red-400">00</span><span class="text-[10px] text-slate-400 uppercase">Days</span></div>
+          <div class="bg-slate-900/80 rounded-xl p-3 border border-white/5"><span id="hours" class="block text-2xl sm:text-4xl font-extrabold text-red-400">00</span><span class="text-[10px] text-slate-400 uppercase">Hours</span></div>
+          <div class="bg-slate-900/80 rounded-xl p-3 border border-white/5"><span id="mins" class="block text-2xl sm:text-4xl font-extrabold text-red-400">00</span><span class="text-[10px] text-slate-400 uppercase">Mins</span></div>
+          <div class="bg-slate-900/80 rounded-xl p-3 border border-white/5"><span id="secs" class="block text-2xl sm:text-4xl font-extrabold text-red-400">00</span><span class="text-[10px] text-slate-400 uppercase">Secs</span></div>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="https://forms.gle/yifQK8Sw6WMCkWch6" target="_blank" rel="noopener noreferrer" class="px-8 py-4 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold transition shadow-lg shadow-red-600/30 flex items-center gap-3 text-base">
+          <i class="fa-solid fa-file-pen"></i>
+          <span>Fill Google Registration Form</span>
         </a>
-        <a href="#notices" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-slate-800/80 hover:bg-slate-800 text-white font-semibold border border-slate-700 hover:border-slate-600 transition-colors flex items-center justify-center gap-2">
-          <svg class="w-4 h-4 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-          Download Circular
+        <a href="invitation-letter.pdf" target="_blank" class="px-8 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold border border-white/20 transition flex items-center gap-3">
+          <i class="fa-solid fa-file-pdf text-red-400"></i>
+          <span>Official Invitation Letter</span>
         </a>
       </div>
     </div>
   </section>
 
-  <section id="about" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        <div class="lg:col-span-6 space-y-6">
-          <span class="text-teal-700 font-bold text-sm tracking-wider uppercase">Legacy of Service Since 1981</span>
-          <h2 class="text-3xl sm:text-4xl font-serif font-bold text-slate-900 leading-tight">
-            Leading the Vanguard of Humanitarian Medical Service
-          </h2>
-          <p class="text-slate-600 leading-relaxed">
-            Medicine Club Bangladesh is a premier non-political voluntary organization established by medical and dental students. For over four decades, our units spanning medical colleges nationwide have been running continuous voluntary blood donation drives, free health clinics, and disaster relief.
-          </p>
-          <p class="text-slate-600 leading-relaxed">
-            This year's Central Annual Conference gathers delegates, chapter presidents, alumni physicians, and visionary leaders to deliberate future strategies and empower the next generation of doctors.
-          </p>
-          <div class="pt-2 flex flex-wrap gap-3">
-            <span class="px-3.5 py-1.5 rounded-lg bg-teal-50 text-teal-800 text-xs font-semibold">✓ Voluntary Blood Donation</span>
-            <span class="px-3.5 py-1.5 rounded-lg bg-teal-50 text-teal-800 text-xs font-semibold">✓ Free Medical Camps</span>
-            <span class="px-3.5 py-1.5 rounded-lg bg-teal-50 text-teal-800 text-xs font-semibold">✓ Medical Education & Research</span>
+  <!-- Official Schedule -->
+  <section id="schedule" class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <span class="text-xs font-bold uppercase text-red-600 tracking-wider">Official Itinerary</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-1">Event Timetable</h2>
+        <p class="text-slate-500 text-sm mt-2">Program details for 14, 15 & 16 October 2026</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Day 1 -->
+        <div class="bg-slate-50 border border-slate-200 rounded-3xl p-6 relative">
+          <div class="inline-block px-3 py-1 bg-red-100 text-red-800 text-xs font-bold rounded-lg mb-4">Day 1: 14 October 2026 • Wednesday</div>
+          <div class="space-y-4">
+            <div class="p-4 bg-white border border-slate-200 rounded-2xl shadow-sm">
+              <span class="text-xs font-bold text-red-600 block"><i class="fa-regular fa-clock mr-1"></i> 06:00 PM</span>
+              <h4 class="font-bold text-slate-900 text-base mt-1">Delegate Registration</h4>
+              <p class="text-xs text-slate-500 mt-1">Arrival, welcome desk reception, and kit distribution for delegates nationwide.</p>
+            </div>
           </div>
         </div>
 
-        <!-- Metric Counter Cards -->
-        <div class="lg:col-span-6 grid grid-cols-2 gap-4 sm:gap-6">
-          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 shadow-sm text-center">
-            <span class="block text-4xl sm:text-5xl font-extrabold text-teal-700">45+</span>
-            <span class="block mt-2 text-sm font-semibold text-slate-600">Years of Legacy</span>
+        <!-- Day 2 -->
+        <div class="bg-red-50/40 border-2 border-red-500/20 rounded-3xl p-6 relative">
+          <div class="inline-block px-3 py-1 bg-red-600 text-white text-xs font-bold rounded-lg mb-4">Day 2: 15 October 2026 • Thursday</div>
+          <div class="space-y-3">
+            <div class="p-3.5 bg-white border border-red-100 rounded-2xl shadow-sm">
+              <span class="text-xs font-bold text-red-600 block"><i class="fa-regular fa-clock mr-1"></i> 09:30 AM</span>
+              <h4 class="font-bold text-slate-900 text-sm mt-0.5">National & Club Flag Hoisting</h4>
+            </div>
+            <div class="p-3.5 bg-white border border-red-100 rounded-2xl shadow-sm">
+              <span class="text-xs font-bold text-red-600 block"><i class="fa-regular fa-clock mr-1"></i> 10:00 AM</span>
+              <h4 class="font-bold text-slate-900 text-sm mt-0.5">Grand Rally</h4>
+            </div>
+            <div class="p-3.5 bg-white border border-red-100 rounded-2xl shadow-sm">
+              <span class="text-xs font-bold text-red-600 block"><i class="fa-regular fa-clock mr-1"></i> 11:00 AM</span>
+              <h4 class="font-bold text-slate-900 text-sm mt-0.5">Inaugural Ceremony</h4>
+            </div>
+            <div class="p-3.5 bg-white border border-red-100 rounded-2xl shadow-sm">
+              <span class="text-xs font-bold text-red-600 block"><i class="fa-regular fa-clock mr-1"></i> 01:30 PM</span>
+              <h4 class="font-bold text-slate-900 text-sm mt-0.5">Grand Luncheon</h4>
+            </div>
           </div>
-          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 shadow-sm text-center">
-            <span class="block text-4xl sm:text-5xl font-extrabold text-slate-900">30+</span>
-            <span class="block mt-2 text-sm font-semibold text-slate-600">Collegiate Units</span>
-          </div>
-          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 shadow-sm text-center">
-            <span class="block text-4xl sm:text-5xl font-extrabold text-slate-900">1,200+</span>
-            <span class="block mt-2 text-sm font-semibold text-slate-600">Delegates Expected</span>
-          </div>
-          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 shadow-sm text-center">
-            <span class="block text-4xl sm:text-5xl font-extrabold text-teal-700">100%</span>
-            <span class="block mt-2 text-sm font-semibold text-slate-600">Voluntary Service</span>
+        </div>
+
+        <!-- Day 3 -->
+        <div class="bg-slate-50 border border-slate-200 rounded-3xl p-6 relative">
+          <div class="inline-block px-3 py-1 bg-red-100 text-red-800 text-xs font-bold rounded-lg mb-4">Day 3: 16 October 2026 • Friday</div>
+          <div class="space-y-4">
+            <div class="p-4 bg-white border border-slate-200 rounded-2xl shadow-sm">
+              <span class="text-xs font-bold text-red-600 block"><i class="fa-regular fa-clock mr-1"></i> 04:00 PM</span>
+              <h4 class="font-bold text-slate-900 text-base mt-1">Cultural Night & Closing</h4>
+              <p class="text-xs text-slate-500 mt-1">Cultural performances, awards ceremony, and concluding general assembly.</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="schedule" class="py-20 bg-slate-50 border-t border-slate-200">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- Official Registration Fees -->
+  <section id="fees" class="py-20 bg-slate-50 border-y border-slate-200">
+    <div class="max-w-5xl mx-auto px-4">
       <div class="text-center mb-14">
-        <span class="text-teal-700 font-bold text-sm tracking-wider uppercase">Event Itinerary</span>
-        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-slate-900 mt-2">Conference Program Flow</h2>
-        <p class="text-slate-600 text-sm sm:text-base mt-2">Comprehensive day schedule for registered delegates and guests</p>
+        <span class="text-xs font-bold uppercase text-red-600 tracking-wider">Official Delegate Tiers</span>
+        <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Registration Fee Schedule</h2>
+        <p class="text-slate-500 text-sm mt-2">Select your category before completing the official registration form</p>
       </div>
 
-      <!-- Timeline Items -->
-      <div class="space-y-6">
-        <!-- Item 1 -->
-        <div class="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-sm hover:border-teal-500/50 transition-colors flex flex-col sm:flex-row gap-5 items-start">
-          <div class="sm:w-36 flex-shrink-0">
-            <span class="inline-block px-3 py-1 rounded-md bg-teal-100 text-teal-800 text-xs font-bold uppercase tracking-wider">08:30 AM</span>
-            <p class="text-xs text-slate-400 mt-1">Registration Desk</p>
-          </div>
-          <div class="space-y-1">
-            <h3 class="text-lg font-bold text-slate-900">Delegate Arrival & Kit Distribution</h3>
-            <p class="text-sm text-slate-600">Credential badges, conference folders, official souvenirs, and breakfast vouchers will be handed out to accredited representatives.</p>
-          </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm flex justify-between items-center">
+          <div><h4 class="font-bold text-slate-900 text-sm">Central Advisor</h4><span class="text-xs text-slate-400">Advisory Council</span></div>
+          <span class="px-3.5 py-1.5 bg-red-50 text-red-700 font-extrabold text-base rounded-xl border border-red-100">3,000/-</span>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm flex justify-between items-center">
+          <div><h4 class="font-bold text-slate-900 text-sm">Unit Advisor</h4><span class="text-xs text-slate-400">Institutional Advisor</span></div>
+          <span class="px-3.5 py-1.5 bg-red-50 text-red-700 font-extrabold text-base rounded-xl border border-red-100">2,000/-</span>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm flex justify-between items-center">
+          <div><h4 class="font-bold text-slate-900 text-sm">Central President</h4><span class="text-xs text-slate-400">Central Secretariat</span></div>
+          <span class="px-3.5 py-1.5 bg-red-50 text-red-700 font-extrabold text-base rounded-xl border border-red-100">2,000/-</span>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm flex justify-between items-center">
+          <div><h4 class="font-bold text-slate-900 text-sm">Central General Secretary</h4><span class="text-xs text-slate-400">Central Secretariat</span></div>
+          <span class="px-3.5 py-1.5 bg-red-50 text-red-700 font-extrabold text-base rounded-xl border border-red-100">2,000/-</span>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm flex justify-between items-center">
+          <div><h4 class="font-bold text-slate-900 text-sm">Unit President</h4><span class="text-xs text-slate-400">Unit Executive</span></div>
+          <span class="px-3.5 py-1.5 bg-red-50 text-red-700 font-extrabold text-base rounded-xl border border-red-100">1,200/-</span>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm flex justify-between items-center">
+          <div><h4 class="font-bold text-slate-900 text-sm">Unit General Secretary</h4><span class="text-xs text-slate-400">Unit Executive</span></div>
+          <span class="px-3.5 py-1.5 bg-red-50 text-red-700 font-extrabold text-base rounded-xl border border-red-100">1,200/-</span>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm flex justify-between items-center">
+          <div><h4 class="font-bold text-slate-900 text-sm">Central Member</h4><span class="text-xs text-slate-400">Central Council</span></div>
+          <span class="px-3.5 py-1.5 bg-red-50 text-red-700 font-extrabold text-base rounded-xl border border-red-100">1,000/-</span>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm flex justify-between items-center">
+          <div><h4 class="font-bold text-slate-900 text-sm">Unit Member</h4><span class="text-xs text-slate-400">General Member</span></div>
+          <span class="px-3.5 py-1.5 bg-red-50 text-red-700 font-extrabold text-base rounded-xl border border-red-100">800/-</span>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm flex justify-between items-center">
+          <div><h4 class="font-bold text-slate-900 text-sm">Convenor</h4><span class="text-xs text-slate-400">Convener Unit Delegate</span></div>
+          <span class="px-3.5 py-1.5 bg-red-50 text-red-700 font-extrabold text-base rounded-xl border border-red-100">600/-</span>
+        </div>
+      </div>
+
+      <!-- Payment Notice -->
+      <div class="mt-8 p-4 bg-amber-50 border border-amber-200 rounded-2xl max-w-2xl mx-auto flex items-center gap-3 text-xs text-amber-900">
+        <i class="fa-solid fa-circle-info text-amber-600 text-base"></i>
+        <span><strong>Payment Method:</strong> Official bKash/Nagad account numbers and Transaction ID verification details are provided directly inside the Google Registration Form.</span>
+      </div>
+
+      <div class="mt-8 text-center flex flex-wrap justify-center gap-4">
+        <a href="https://forms.gle/yifQK8Sw6WMCkWch6" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold transition shadow-md">
+          <span>Complete Registration Form</span>
+          <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+        </a>
+        <a href="invitation-letter.pdf" target="_blank" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold transition">
+          <i class="fa-solid fa-file-pdf text-red-600"></i>
+          <span>Download Official Invitation Letter</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guests & Dignitaries -->
+  <section id="guests" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-14">
+        <span class="text-xs font-bold uppercase text-red-600 tracking-wider">Conference Dignitaries</span>
+        <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Guests of Honor</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-10">
+        <div class="p-6 bg-slate-50 border-2 border-red-500/30 rounded-3xl shadow-sm">
+          <span class="px-3 py-1 bg-red-100 text-red-800 text-xs font-bold rounded-full mb-3 inline-block">Chief Guest</span>
+          <h3 class="text-xl font-bold text-slate-900">Dr. Dewan Mohammad Salauddin MP</h3>
+          <p class="text-sm text-red-700 font-semibold mt-1">Honorable Member of Parliament, Dhaka-19</p>
+          <p class="text-xs text-slate-500 mt-2">Assistant Family Welfare Secretary, BNP • Former President, Dhaka District BNP</p>
         </div>
 
-        <!-- Item 2 -->
-        <div class="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-sm hover:border-teal-500/50 transition-colors flex flex-col sm:flex-row gap-5 items-start">
-          <div class="sm:w-36 flex-shrink-0">
-            <span class="inline-block px-3 py-1 rounded-md bg-teal-100 text-teal-800 text-xs font-bold uppercase tracking-wider">10:00 AM</span>
-            <p class="text-xs text-slate-400 mt-1">Grand Auditorium</p>
-          </div>
-          <div class="space-y-1">
-            <h3 class="text-lg font-bold text-slate-900">Grand Inaugural Ceremony & Keynote Address</h3>
-            <p class="text-sm text-slate-600">Recitation from holy scriptures, hoisting of organization flag, opening speech by the Central President, and keynotes by senior medical mentors.</p>
-          </div>
+        <div class="p-6 bg-slate-50 border-2 border-red-500/30 rounded-3xl shadow-sm">
+          <span class="px-3 py-1 bg-red-100 text-red-800 text-xs font-bold rounded-full mb-3 inline-block">Inaugurator</span>
+          <h3 class="text-xl font-bold text-slate-900">Prof. Dr. F. M. Siddiqui</h3>
+          <p class="text-sm text-red-700 font-semibold mt-1">Vice-Chancellor</p>
+          <p class="text-xs text-slate-500 mt-2">Bangladesh Medical University</p>
         </div>
+      </div>
 
-        <!-- Item 3 -->
-        <div class="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-sm hover:border-teal-500/50 transition-colors flex flex-col sm:flex-row gap-5 items-start">
-          <div class="sm:w-36 flex-shrink-0">
-            <span class="inline-block px-3 py-1 rounded-md bg-teal-100 text-teal-800 text-xs font-bold uppercase tracking-wider">01:30 PM</span>
-            <p class="text-xs text-slate-400 mt-1">Seminar Halls</p>
-          </div>
-          <div class="space-y-1">
-            <h3 class="text-lg font-bold text-slate-900">Scientific Seminars & Clinical Skills Workshops</h3>
-            <p class="text-sm text-slate-600">Simultaneous sessions on emergency trauma triage, rare hematological diseases, and workshops on medical research methodologies.</p>
-          </div>
-        </div>
-
-        <!-- Item 4 -->
-        <div class="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-sm hover:border-teal-500/50 transition-colors flex flex-col sm:flex-row gap-5 items-start">
-          <div class="sm:w-36 flex-shrink-0">
-            <span class="inline-block px-3 py-1 rounded-md bg-teal-100 text-teal-800 text-xs font-bold uppercase tracking-wider">04:30 PM</span>
-            <p class="text-xs text-slate-400 mt-1">Council Chamber</p>
-          </div>
-          <div class="space-y-1">
-            <h3 class="text-lg font-bold text-slate-900">Central Delegate Assembly & Annual Election</h3>
-            <p class="text-sm text-slate-600">Presentation of annual audit and unit reports, constitution review, and election/declaration of the next Central Executive Committee.</p>
-          </div>
-        </div>
-
-        <!-- Item 5 -->
-        <div class="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-sm hover:border-teal-500/50 transition-colors flex flex-col sm:flex-row gap-5 items-start">
-          <div class="sm:w-36 flex-shrink-0">
-            <span class="inline-block px-3 py-1 rounded-md bg-rose-100 text-rose-800 text-xs font-bold uppercase tracking-wider">07:30 PM</span>
-            <p class="text-xs text-slate-400 mt-1">Open Stage</p>
-          </div>
-          <div class="space-y-1">
-            <h3 class="text-lg font-bold text-slate-900">Annual Recognition Awards & Cultural Evening</h3>
-            <p class="text-sm text-slate-600">Best Unit of the Year honors, highest blood collection accolades, musical performances by medical artists, followed by the Grand Gala Dinner.</p>
-          </div>
+      <div class="bg-slate-50 border border-slate-200 rounded-3xl p-8 max-w-5xl mx-auto">
+        <h4 class="text-sm font-bold uppercase tracking-wider text-red-800 mb-6 text-center">Special Guests</h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 text-xs">
+          <div class="p-4 bg-white rounded-2xl border border-slate-200"><p class="font-bold text-slate-900">Prof. Dr. Md. Abul Hossain</p><p class="text-slate-500">Vice-Chancellor, Gono Bishwabidyalay</p></div>
+          <div class="p-4 bg-white rounded-2xl border border-slate-200"><p class="font-bold text-slate-900">Prof. Dr. Mohammad Rafiqul Islam</p><p class="text-slate-500">Head, Urology Dept, Bangladesh Medical University</p></div>
+          <div class="p-4 bg-white rounded-2xl border border-slate-200"><p class="font-bold text-slate-900">Prof. Dr. Sayedur Rahman</p><p class="text-slate-500">Project Coordinator, GK • Former VC, BMU</p></div>
+          <div class="p-4 bg-white rounded-2xl border border-slate-200"><p class="font-bold text-slate-900">Prof. Dr. Provat Chandra Biswas</p><p class="text-slate-500">Director General, DGHS</p></div>
+          <div class="p-4 bg-white rounded-2xl border border-slate-200"><p class="font-bold text-slate-900">Dr. Md. Fazle Bari</p><p class="text-slate-500">UH&FPO, Savar</p></div>
+          <div class="p-4 bg-white rounded-2xl border border-slate-200"><p class="font-bold text-slate-900">A. H. M. Shafiquzzaman</p><p class="text-slate-500">Chief Executive Officer, Gonoshasthaya Kendra</p></div>
+          <div class="p-4 bg-white rounded-2xl border border-slate-200"><p class="font-bold text-slate-900">Dr. Mujib Ullah Khondokar</p><p class="text-slate-500">Director, Gonoshasthaya Kendra</p></div>
+          <div class="p-4 bg-white rounded-2xl border border-slate-200"><p class="font-bold text-slate-900">Prof. Dr. Kazi Habibur Rahman</p><p class="text-slate-500">Principal, GSVMC</p></div>
+          <div class="p-4 bg-white rounded-2xl border border-slate-200"><p class="font-bold text-slate-900">Dr. Manzur Kadir Ahmed</p><p class="text-slate-500">MD, Gonoshasthaya Pharmaceuticals Ltd.</p></div>
+          <div class="p-4 bg-white rounded-2xl border border-slate-200 sm:col-span-2 lg:col-span-3 text-center"><p class="font-bold text-slate-900">Dr. Aminul Islam</p><p class="text-slate-500">Director, GSVMC Hospital</p></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="registration" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-teal-700 font-bold text-sm tracking-wider uppercase">Participation Portal</span>
-        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-slate-900 mt-2">Delegate Registration 2026</h2>
-        <p class="text-slate-600 mt-3 text-sm sm:text-base">
-          Registration is open for active collegiate unit members, council delegates, alumni physicians, and volunteer observers.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-        <!-- Tier 1: Unit Delegate -->
-        <div class="rounded-3xl p-8 bg-slate-50 border border-slate-200 flex flex-col justify-between hover:shadow-lg transition-shadow">
-          <div>
-            <div class="flex justify-between items-center mb-4">
-              <span class="text-xs font-bold uppercase tracking-widest text-teal-700 bg-teal-100/70 px-3 py-1 rounded-full">Medical Students</span>
-            </div>
-            <h3 class="text-xl font-bold text-slate-900">Unit Delegate</h3>
-            <div class="mt-4 mb-6">
-              <span class="text-3xl font-extrabold text-slate-900">৳ 500</span>
-              <span class="text-xs text-slate-500">/ per delegate</span>
-            </div>
-            <ul class="space-y-3 text-sm text-slate-600 mb-8">
-              <li class="flex items-center gap-2">✓ Conference Kit & Souvenir</li>
-              <li class="flex items-center gap-2">✓ Breakfast, Lunch & Dinner</li>
-              <li class="flex items-center gap-2">✓ Scientific Workshop Access</li>
-              <li class="flex items-center gap-2">✓ Council Voting Eligibility</li>
-            </ul>
-          </div>
-          <button onclick="openRegisterModal('Unit Delegate (৳ 500)')" class="w-full py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm transition-colors">
-            Register as Student
-          </button>
-        </div>
-
-        <!-- Tier 2: Alumni Doctor (Featured) -->
-        <div class="rounded-3xl p-8 bg-teal-900 text-white flex flex-col justify-between shadow-xl relative border-2 border-teal-500">
-          <div class="absolute -top-3.5 right-6 px-3 py-1 rounded-full bg-teal-500 text-slate-950 font-bold text-xs uppercase tracking-wider">
-            Most Popular
-          </div>
-          <div>
-            <div class="flex justify-between items-center mb-4">
-              <span class="text-xs font-bold uppercase tracking-widest text-teal-300 bg-teal-800/80 px-3 py-1 rounded-full">Graduates & Doctors</span>
-            </div>
-            <h3 class="text-xl font-bold text-white">Alumni Physician</h3>
-            <div class="mt-4 mb-6">
-              <span class="text-3xl font-extrabold text-white">৳ 1,200</span>
-              <span class="text-xs text-teal-200">/ per delegate</span>
-            </div>
-            <ul class="space-y-3 text-sm text-teal-100 mb-8">
-              <li class="flex items-center gap-2">✓ Premium Delegate Souvenir Bag</li>
-              <li class="flex items-center gap-2">✓ Gala Dinner & VIP Reserved Seating</li>
-              <li class="flex items-center gap-2">✓ Scientific Certificate with CME points</li>
-              <li class="flex items-center gap-2">✓ Reunion & Networking Session</li>
-            </ul>
-          </div>
-          <button onclick="openRegisterModal('Alumni Physician (৳ 1200)')" class="w-full py-3 rounded-xl bg-teal-400 hover:bg-teal-300 text-slate-950 font-bold text-sm shadow-lg transition-transform hover:scale-[1.02]">
-            Register as Alumni
-          </button>
-        </div>
-
-        <!-- Tier 3: Observer / Guest -->
-        <div class="rounded-3xl p-8 bg-slate-50 border border-slate-200 flex flex-col justify-between hover:shadow-lg transition-shadow">
-          <div>
-            <div class="flex justify-between items-center mb-4">
-              <span class="text-xs font-bold uppercase tracking-widest text-slate-600 bg-slate-200/80 px-3 py-1 rounded-full">Guest / Volunteer</span>
-            </div>
-            <h3 class="text-xl font-bold text-slate-900">Volunteer Observer</h3>
-            <div class="mt-4 mb-6">
-              <span class="text-3xl font-extrabold text-slate-900">৳ 400</span>
-              <span class="text-xs text-slate-500">/ per participant</span>
-            </div>
-            <ul class="space-y-3 text-sm text-slate-600 mb-8">
-              <li class="flex items-center gap-2">✓ Observer ID Badge</li>
-              <li class="flex items-center gap-2">✓ Meals & Refreshments</li>
-              <li class="flex items-center gap-2">✓ Cultural Night Entry</li>
-              <li class="flex items-center gap-2">✕ Non-voting status</li>
-            </ul>
-          </div>
-          <button onclick="openRegisterModal('Volunteer Observer (৳ 400)')" class="w-full py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm transition-colors">
-            Register as Observer
-          </button>
-        </div>
-      </div>
-
-      <!-- Payment & Verification Guide -->
-      <div class="mt-12 p-6 sm:p-8 rounded-2xl bg-teal-50/70 border border-teal-200 flex flex-col md:flex-row gap-6 items-center justify-between">
-        <div class="space-y-1">
-          <h4 class="font-bold text-slate-900 text-base sm:text-lg flex items-center gap-2">
-            <svg class="w-5 h-5 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-            Registration Fee Payment Instruction (bKash / Nagad)
-          </h4>
-          <p class="text-sm text-slate-600">
-            Send money via 'Send Money' option to the official finance coordinator number. Keep note of the TrxID.
-          </p>
-        </div>
-
-        <div class="flex flex-wrap items-center gap-3">
-          <div class="bg-white px-4 py-2.5 rounded-xl border border-teal-300 font-mono text-sm font-bold text-slate-900 flex items-center gap-3">
-            <span>01712-345678</span>
-            <span class="text-[10px] bg-rose-100 text-rose-700 px-2 py-0.5 rounded font-sans">bKash Personal</span>
-          </div>
-          <button onclick="copyToClipboard('01712345678', 'bKash Number')" class="px-4 py-2.5 rounded-xl bg-teal-700 hover:bg-teal-800 text-white text-xs font-semibold flex items-center gap-1.5 transition-colors">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
-            Copy Number
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="notices" class="py-20 bg-slate-50 border-t border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
+  <!-- Units Directory -->
+  <section id="units" class="py-20 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-10">
         <div>
-          <span class="text-teal-700 font-bold text-sm tracking-wider uppercase">Official Documentation</span>
-          <h2 class="text-3xl sm:text-4xl font-serif font-bold text-slate-900 mt-1">Notices & Circulars</h2>
+          <span class="text-xs font-bold uppercase text-red-600 tracking-wider">Nationwide Presence</span>
+          <h2 class="text-3xl font-extrabold text-slate-900 mt-1">34 Member Units & Conveners</h2>
         </div>
-        <p class="text-slate-500 text-sm max-w-md">
-          Download authenticated letters and circulars authorized by the Central Executive Committee.
-        </p>
+        <div class="w-full md:w-72">
+          <input type="text" id="unitSearch" placeholder="Search medical college unit..." class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-red-500 focus:outline-none">
+        </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <!-- Notice 1 -->
-        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-teal-400 transition-colors">
-          <div>
-            <div class="w-10 h-10 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center mb-4">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-            </div>
-            <span class="text-[11px] font-bold text-slate-400 uppercase">Circular #01/26</span>
-            <h3 class="font-bold text-slate-900 mt-1 text-base">General Conference Circular</h3>
-            <p class="text-xs text-slate-500 mt-2">Official notice sent to all unit presidents and secretaries detailing delegate quotas.</p>
+      <div id="unitGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs sm:text-sm"></div>
+
+      <div class="mt-8 p-6 bg-white border border-slate-200 rounded-2xl shadow-sm">
+        <h4 class="font-bold text-slate-900 text-sm mb-3 text-red-800 uppercase tracking-wider">Convener Units:</h4>
+        <div class="flex flex-wrap gap-2 text-xs">
+          <span class="px-3 py-1.5 bg-slate-100 border border-slate-200 rounded-lg text-slate-700 font-medium">Holy Family Red Crescent Medical College</span>
+          <span class="px-3 py-1.5 bg-slate-100 border border-slate-200 rounded-lg text-slate-700 font-medium">Kushtia Medical College</span>
+          <span class="px-3 py-1.5 bg-slate-100 border border-slate-200 rounded-lg text-slate-700 font-medium">Mandy Dental College</span>
+          <span class="px-3 py-1.5 bg-slate-100 border border-slate-200 rounded-lg text-slate-700 font-medium">Shaheed Suhrawardy Medical College</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sponsorship & Budget -->
+  <section id="sponsorship" class="py-20 bg-slate-900 text-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-xs font-bold uppercase text-red-400 tracking-wider">Partnership Prospectus</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold mt-1">Conference Budget & Sponsorship</h2>
+        <p class="text-slate-400 mt-2 text-sm">Partner with the largest gathering of 1,000+ medical professionals and students.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2 bg-slate-800/80 border border-slate-700 rounded-3xl p-8">
+          <h3 class="text-xl font-bold mb-6 flex justify-between items-center">
+            <span>Total Conference Budget</span>
+            <span class="text-red-400 font-extrabold">2,175,000 BDT</span>
+          </h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+            <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-700/50 flex justify-between"><span>Reception & Gifts</span><span class="font-bold text-slate-200">76,000/-</span></div>
+            <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-700/50 flex justify-between"><span>Inauguration, Rally & T-Shirts</span><span class="font-bold text-slate-200">177,500/-</span></div>
+            <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-700/50 flex justify-between"><span>Hall Fee, Seminars & Sound</span><span class="font-bold text-slate-200">254,000/-</span></div>
+            <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-700/50 flex justify-between"><span>Accommodation</span><span class="font-bold text-slate-200">317,000/-</span></div>
+            <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-700/50 flex justify-between"><span>Campus Decoration</span><span class="font-bold text-slate-200">254,000/-</span></div>
+            <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-700/50 flex justify-between"><span>Grand Feast (1)</span><span class="font-bold text-slate-200">190,000/-</span></div>
+            <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-700/50 flex justify-between"><span>Meals (3) & Breakfast</span><span class="font-bold text-slate-200">291,500/-</span></div>
+            <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-700/50 flex justify-between"><span>Cultural Program</span><span class="font-bold text-slate-200">254,000/-</span></div>
+            <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-700/50 flex justify-between"><span>Souvenirs & Crests</span><span class="font-bold text-slate-200">190,000/-</span></div>
+            <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-700/50 flex justify-between"><span>Posters, Banners & Logistics</span><span class="font-bold text-slate-200">171,000/-</span></div>
           </div>
-          <button onclick="simulateDownload('Central_Conference_Circular_2026.pdf')" class="mt-6 flex items-center justify-between text-xs font-bold text-teal-700 hover:text-teal-900 group">
-            <span>Download PDF</span>
-            <svg class="w-4 h-4 group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-          </button>
         </div>
 
-        <!-- Notice 2 -->
-        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-teal-400 transition-colors">
+        <div class="bg-gradient-to-b from-red-950 to-slate-800 border-2 border-red-500 rounded-3xl p-8 flex flex-col justify-between">
           <div>
-            <div class="w-10 h-10 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center mb-4">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-            </div>
-            <span class="text-[11px] font-bold text-slate-400 uppercase">Guidelines</span>
-            <h3 class="font-bold text-slate-900 mt-1 text-base">Delegate Code & Rules</h3>
-            <p class="text-xs text-slate-500 mt-2">Comprehensive guidelines regarding lodging, council conduct, and dress codes.</p>
+            <span class="text-xs uppercase tracking-widest text-red-300 font-extrabold block mb-2">Prime Slot</span>
+            <h3 class="text-2xl font-black text-white">Title Sponsorship</h3>
+            <p class="text-4xl font-extrabold text-red-400 my-4">1,050,000 <span class="text-sm text-slate-300 font-normal">BDT</span></p>
+            <p class="text-xs text-slate-300 leading-relaxed mb-6">
+              Includes comprehensive branding on rally T-shirts, seminar backdrop, campus banners, and national media coverage.
+            </p>
           </div>
-          <button onclick="simulateDownload('Delegate_Guidelines_2026.pdf')" class="mt-6 flex items-center justify-between text-xs font-bold text-teal-700 hover:text-teal-900 group">
-            <span>Download PDF</span>
-            <svg class="w-4 h-4 group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-          </button>
-        </div>
-
-        <!-- Notice 3 -->
-        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-teal-400 transition-colors">
-          <div>
-            <div class="w-10 h-10 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center mb-4">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-            </div>
-            <span class="text-[11px] font-bold text-slate-400 uppercase">Schedule Flow</span>
-            <h3 class="font-bold text-slate-900 mt-1 text-base">Full Event Schedule</h3>
-            <p class="text-xs text-slate-500 mt-2">Hour-by-hour session breakdown, speaker line-up, and workshop topics.</p>
-          </div>
-          <button onclick="simulateDownload('Event_Schedule_Detailed.pdf')" class="mt-6 flex items-center justify-between text-xs font-bold text-teal-700 hover:text-teal-900 group">
-            <span>Download PDF</span>
-            <svg class="w-4 h-4 group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-          </button>
-        </div>
-
-        <!-- Notice 4 -->
-        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-teal-400 transition-colors">
-          <div>
-            <div class="w-10 h-10 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center mb-4">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-            </div>
-            <span class="text-[11px] font-bold text-slate-400 uppercase">Invitation</span>
-            <h3 class="font-bold text-slate-900 mt-1 text-base">Alumni Invitation Letter</h3>
-            <p class="text-xs text-slate-500 mt-2">Formal invitation letter signed by central executive leaders for senior alumni doctors.</p>
-          </div>
-          <button onclick="simulateDownload('Alumni_Invitation_Letter.pdf')" class="mt-6 flex items-center justify-between text-xs font-bold text-teal-700 hover:text-teal-900 group">
-            <span>Download PDF</span>
-            <svg class="w-4 h-4 group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+          <button onclick="window.print()" class="w-full py-3.5 bg-red-600 hover:bg-red-500 text-white font-bold rounded-xl text-sm transition">
+            <i class="fa-solid fa-print mr-2"></i> Print / Save Agreement
           </button>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <span class="text-teal-700 font-bold text-sm tracking-wider uppercase">Support & Helpline</span>
-        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-slate-900 mt-2">Emergency Coordination Desk</h2>
-        <p class="text-slate-600 mt-2 text-sm sm:text-base">For delegate accommodation, payment confirmation, or urgent inquiries</p>
+  <!-- Inquiry & Contact Desk -->
+  <section id="contact" class="py-16 bg-white border-t border-slate-200">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <span class="text-xs font-bold uppercase text-red-600 tracking-wider">Helpline & Secretariat</span>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1 mb-8">Inquiry & Delegate Assistance</h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+        <a href="tel:01998608723" class="p-6 bg-slate-50 border border-slate-200 rounded-3xl hover:border-red-500 transition text-left flex items-center gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-red-100 text-red-700 flex items-center justify-center text-xl"><i class="fa-solid fa-phone"></i></div>
+          <div>
+            <h4 class="font-bold text-slate-900">Kamrul Molla</h4>
+            <p class="text-xs text-slate-500">President, GSVMC Unit (2025–2026)</p>
+            <p class="text-sm font-bold text-red-700 mt-1">01998-608723</p>
+          </div>
+        </a>
+
+        <a href="tel:01648929359" class="p-6 bg-slate-50 border border-slate-200 rounded-3xl hover:border-red-500 transition text-left flex items-center gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-red-100 text-red-700 flex items-center justify-center text-xl"><i class="fa-solid fa-phone"></i></div>
+          <div>
+            <h4 class="font-bold text-slate-900">Pangkaj Sharma</h4>
+            <p class="text-xs text-slate-500">General Secretary, GSVMC Unit (2025–2026)</p>
+            <p class="text-sm font-bold text-red-700 mt-1">01648-929359</p>
+          </div>
+        </a>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Contact Card 1 -->
-        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
-          <span class="text-xs font-bold text-teal-700 uppercase tracking-wider">General Information</span>
-          <h3 class="font-bold text-slate-900 text-lg mt-1">Central Secretariat</h3>
-          <p class="text-sm text-slate-500 mt-1">Medicine Club Central Executive Committee</p>
-          <div class="mt-4 pt-4 border-t border-slate-200 space-y-2 text-sm">
-            <div class="flex items-center justify-between">
-              <span class="text-slate-600">Email:</span>
-              <span class="font-medium text-slate-900">central@medicineclub-bd.org</span>
-            </div>
-            <div class="flex items-center justify-between">
-              <span class="text-slate-600">Hotline:</span>
-              <button onclick="copyToClipboard('+8801700000001', 'Hotline Number')" class="font-semibold text-teal-700 hover:underline">
-                +880 1700-000001
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Contact Card 2 -->
-        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
-          <span class="text-xs font-bold text-teal-700 uppercase tracking-wider">Delegate Registration</span>
-          <h3 class="font-bold text-slate-900 text-lg mt-1">Registration Desk Lead</h3>
-          <p class="text-sm text-slate-500 mt-1">Delegate verification & credentials</p>
-          <div class="mt-4 pt-4 border-t border-slate-200 space-y-2 text-sm">
-            <div class="flex items-center justify-between">
-              <span class="text-slate-600">Phone:</span>
-              <button onclick="copyToClipboard('+8801800000002', 'Registration Lead')" class="font-semibold text-teal-700 hover:underline">
-                +880 1800-000002
-              </button>
-            </div>
-            <div class="flex items-center justify-between">
-              <span class="text-slate-600">Available:</span>
-              <span class="font-medium text-slate-900">24/7 during conference</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Contact Card 3 -->
-        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
-          <span class="text-xs font-bold text-teal-700 uppercase tracking-wider">Lodging & Logistics</span>
-          <h3 class="font-bold text-slate-900 text-lg mt-1">Accommodation Wing</h3>
-          <p class="text-sm text-slate-500 mt-1">Hostel & hotel arrangements for units</p>
-          <div class="mt-4 pt-4 border-t border-slate-200 space-y-2 text-sm">
-            <div class="flex items-center justify-between">
-              <span class="text-slate-600">Helpline:</span>
-              <button onclick="copyToClipboard('+8801900000003', 'Accommodation Desk')" class="font-semibold text-teal-700 hover:underline">
-                +880 1900-000003
-              </button>
-            </div>
-            <div class="flex items-center justify-between">
-              <span class="text-slate-600">City:</span>
-              <span class="font-medium text-slate-900">Dhaka, Bangladesh</span>
-            </div>
-          </div>
-        </div>
+      <div class="mt-12 pt-8 border-t border-slate-100 text-xs text-slate-500 space-y-1">
+        <p><strong>Convener:</strong> Prof. Dr. Farida Yasmin Mousumi • <strong>Member Secretary:</strong> Dr. Sohag Rana</p>
+        <p><strong>Central President:</strong> Md Rakibul Islam Antor • <strong>General Secretary:</strong> Arpan Karmakar Shourya (2024–2025)</p>
       </div>
     </div>
   </section>
 
-  <div id="register-modal" class="fixed inset-0 z-50 hidden bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4">
-    <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative border border-slate-200 max-h-[90vh] overflow-y-auto">
-      <button onclick="closeRegisterModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-700 p-2 rounded-full hover:bg-slate-100">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-      </button>
-
-      <span class="text-teal-700 font-bold text-xs uppercase tracking-wider">Fast Online Submission</span>
-      <h3 class="text-2xl font-bold text-slate-900 mt-1">Conference Delegate Entry</h3>
-      <p id="modal-category" class="text-sm font-semibold text-teal-600 mt-1 mb-6">Unit Delegate (৳ 500)</p>
-
-      <form id="delegate-form" onsubmit="handleRegistrationSubmit(event)" class="space-y-4">
-        <div>
-          <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Full Name</label>
-          <input required type="text" placeholder="Dr. / Student Full Name" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-teal-500 focus:outline-none" />
-        </div>
-
-        <div>
-          <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Medical College / Unit</label>
-          <input required type="text" placeholder="e.g. Dhaka Medical College Unit" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-teal-500 focus:outline-none" />
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Mobile Number</label>
-            <input required type="tel" placeholder="017xxxxxxxx" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-teal-500 focus:outline-none" />
-          </div>
-          <div>
-            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Payment TrxID</label>
-            <input required type="text" placeholder="bKash/Nagad TrxID" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-teal-500 focus:outline-none font-mono" />
-          </div>
-        </div>
-
-        <div class="pt-4">
-          <button type="submit" class="w-full py-3.5 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-bold text-sm shadow-md shadow-teal-600/30 transition-all">
-            Submit Registration
-          </button>
-          <p class="text-[11px] text-slate-400 text-center mt-3">
-            Prefer Google Forms? <a href="#" class="text-teal-700 font-semibold underline">Click here to open our official Google Form</a>.
-          </p>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800 text-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-      <div class="flex items-center gap-3">
-        <div class="w-8 h-8 rounded-lg bg-teal-600 text-white flex items-center justify-center">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 10.5h-5.5V5c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v5.5H5c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5h5.5V19c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-5.5H19c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5z"/></svg>
-        </div>
-        <div>
-          <p class="font-bold text-white">Medicine Club Bangladesh</p>
-          <p class="text-xs text-slate-500">Voluntary Humanitarian Organization of Medical & Dental Students</p>
-        </div>
-      </div>
-      <p class="text-xs text-slate-500 text-center md:text-right">
-        &copy; 2026 Medicine Club Bangladesh. All rights reserved.<br/>
-        Domain: <span class="text-teal-400 font-mono">medicineclub-bd.org</span>
-      </p>
-    </div>
+  <!-- Footer -->
+  <footer class="bg-slate-950 text-slate-400 py-8 text-xs text-center border-t border-slate-800">
+    <p class="text-white font-bold text-sm mb-1">Medicine Club Bangladesh</p>
+    <p>Central Executive Committee & Gonoshasthaya Samaj Vittik Medical College Unit</p>
+    <p class="mt-4 text-slate-600">© 2026 Medicine Club Bangladesh. All rights reserved.</p>
   </footer>
 
   <script>
-    // 1. Mobile navigation menu toggle
-    function toggleMenu() {
-      const menu = document.getElementById('mobile-menu');
-      menu.classList.toggle('hidden');
+    // Units Directory Data
+    const units = [
+      "Army Medical College Cumilla (AMCCU)", "Brahmanbaria Medical College (BBMCU)",
+      "Community Based Medical College (CBMCU)", "Central Medical College (CeMCU)",
+      "Cumilla Medical College (CuMCU)", "Cox's Bazar Medical College (COXMCU)",
+      "Dhaka Medical College (DMCU)", "Dinajpur Medical College (DjMCU)",
+      "Delta Medical College (DLMCU)", "Faridpur Medical College (FMCU)",
+      "Gopalganj Medical College (GgMCU)", "Gonoshasthaya Samaj Vittik MC (GSVMCU)",
+      "Habiganj Medical College (HMCU)", "Khulna Medical College (KMCU)",
+      "Mymensingh Medical College (MMCU)", "Manikganj Medical College (MgMCU)",
+      "Mainamoti Medical College (MmMCU)", "Mugda Medical College (MuMCU)",
+      "Noakhali Medical College (NMCU)", "Pabna Medical College (PMCU)",
+      "Patuakhali Medical College (PKMCU)", "Park View Medical College (PVMCU)",
+      "Rajshahi Medical College (RMCU)", "Rangamati Medical College (RmMCU)",
+      "Rangpur Medical College (RPMCU)", "Sher-E-Bangla Medical College (SBMCU)",
+      "Shaheed M Monsur Ali MC (SMMAMCU)", "Sylhet MAG Osmani MC (SOMCU)",
+      "Shaheed Syed Nazrul Islam MC (SSNIMCU)", "Shaheed Tajuddin Ahmed MC (STAMCU)",
+      "Shaheed Ziaur Rahman MC (SZRMCU)", "Universal Medical College (UMCU)",
+      "Uttara Adhunik Medical College (UAMCU)", "US Bangla Medical College (USBMCU)"
+    ];
+
+    function renderUnits(filter = "") {
+      const container = document.getElementById("unitGrid");
+      container.innerHTML = "";
+      units.filter(u => u.toLowerCase().includes(filter.toLowerCase())).forEach((u, i) => {
+        const div = document.createElement("div");
+        div.className = "p-3 bg-white border border-slate-200 rounded-xl flex items-center gap-2 shadow-sm";
+        div.innerHTML = `<span class="text-red-600 font-bold">${i+1}.</span><span class="font-medium text-slate-800">${u}</span>`;
+        container.appendChild(div);
+      });
     }
-    document.getElementById('mobile-menu-btn').addEventListener('click', toggleMenu);
+    document.getElementById("unitSearch").addEventListener("input", e => renderUnits(e.target.value));
+    renderUnits();
 
-    // 2. Countdown Timer logic (Target: 6 days from now)
-    const targetDate = new Date();
-    targetDate.setDate(targetDate.getDate() + 6);
-
-    function updateCountdown() {
+    // Countdown Timer (Oct 14, 2026, 18:00)
+    const confDate = new Date("October 14, 2026 18:00:00").getTime();
+    setInterval(() => {
       const now = new Date().getTime();
-      const difference = targetDate.getTime() - now;
-
-      if (difference > 0) {
-        const d = Math.floor(difference / (1000 * 60 * 60 * 24));
-        const h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-        const s = Math.floor((difference % (1000 * 60)) / 1000);
-
-        document.getElementById('days').innerText = String(d).padStart(2, '0');
-        document.getElementById('hours').innerText = String(h).padStart(2, '0');
-        document.getElementById('minutes').innerText = String(m).padStart(2, '0');
-        document.getElementById('seconds').innerText = String(s).padStart(2, '0');
+      const diff = confDate - now;
+      if (diff > 0) {
+        document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+        document.getElementById("hours").innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60)).toString().padStart(2, '0');
+        document.getElementById("mins").innerText = Math.floor((diff % (1000 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+        document.getElementById("secs").innerText = Math.floor((diff % (1000 * 60)) / 1000).toString().padStart(2, '0');
       }
-    }
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
-
-    // 3. Toast notification & Copy to Clipboard
-    function showToast(message) {
-      const toast = document.getElementById('toast');
-      const msg = document.getElementById('toast-message');
-      msg.innerText = message;
-      toast.classList.remove('opacity-0', 'translate-y-24');
-      toast.classList.add('opacity-100', 'translate-y-0');
-
-      setTimeout(() => {
-        toast.classList.remove('opacity-100', 'translate-y-0');
-        toast.classList.add('opacity-0', 'translate-y-24');
-      }, 3000);
-    }
-
-    function copyToClipboard(text, label) {
-      const tempInput = document.createElement('input');
-      tempInput.value = text;
-      document.body.appendChild(tempInput);
-      tempInput.select();
-      try {
-        document.execCommand('copy');
-        showToast(label + ' copied: ' + text);
-      } catch (err) {
-        showToast('Failed to copy');
-      }
-      document.body.removeChild(tempInput);
-    }
-
-    // 4. Modal Window Controls
-    function openRegisterModal(categoryName) {
-      document.getElementById('modal-category').innerText = categoryName;
-      document.getElementById('register-modal').classList.remove('hidden');
-    }
-
-    function closeRegisterModal() {
-      document.getElementById('register-modal').classList.add('hidden');
-    }
-
-    // 5. Registration Form Handler
-    function handleRegistrationSubmit(event) {
-      event.preventDefault();
-      closeRegisterModal();
-      showToast('Registration details submitted successfully!');
-      document.getElementById('delegate-form').reset();
-    }
-
-    // 6. Mock Document Downloader
-    function simulateDownload(filename) {
-      showToast('Downloading ' + filename + '...');
-    }
+    }, 1000);
   </script>
 </body>
 </html>
