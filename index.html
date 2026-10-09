@@ -3,7 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>27th Central Annual Conference | Medicine Club</title>
+  
+  <!-- Primary SEO & Social Graph (Facebook, WhatsApp, LinkedIn preview) -->
+  <title>27th Central Annual Conference 2026 | Medicine Club</title>
+  <meta name="description" content="Official Portal for 27th Central Annual Conference 2026 of Medicine Club. 14-16 October 2026 at PHA Bhaban, Savar.">
+  <meta property="og:title" content="27th Central Annual Conference 2026 | Medicine Club">
+  <meta property="og:description" content="Gathering 1,000+ medical minds across 34 units nationwide. Hosted by GSVMC Unit at PHA Bhaban, Savar.">
+  <meta property="og:image" content="./club%20logo.webp">
+  <meta property="og:type" content="website">
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -42,12 +50,13 @@
           </div>
         </a>
         
-        <div class="hidden lg:flex items-center gap-6 font-semibold text-sm text-slate-300">
+        <div class="hidden lg:flex items-center gap-5 font-semibold text-sm text-slate-300">
           <a href="#schedule" class="hover:text-red-400 transition">Schedule</a>
           <a href="#guests" class="hover:text-red-400 transition">Dignitaries</a>
           <a href="#fees" class="hover:text-red-400 transition">Registration Fees</a>
           <a href="#units" class="hover:text-red-400 transition">Units (34)</a>
-          <a href="#sponsorship" class="hover:text-red-400 transition">Sponsorship</a>
+          <a href="#venue-transit" class="hover:text-red-400 transition">Transit Guide</a>
+          <a href="#faq" class="hover:text-red-400 transition">FAQ</a>
           <a href="#contact" class="hover:text-red-400 transition">Inquiry</a>
           
           <button onclick="openPdfModal()" type="button" class="px-4 py-2 rounded-xl bg-indigo-950/70 hover:bg-indigo-900/80 text-slate-200 transition font-bold text-xs flex items-center gap-2 border border-indigo-700/50 shadow-sm cursor-pointer">
@@ -104,9 +113,15 @@
         </div>
       </div>
 
-      <!-- Inception Countdown -->
+      <!-- Inception Countdown + Calendar Sync -->
       <div class="custom-mesh-card border border-indigo-700/50 rounded-2xl p-6 max-w-2xl mx-auto mb-10 shadow-2xl">
-        <span class="text-xs font-semibold text-red-400 tracking-widest block mb-4 uppercase">Conference Inception Countdown</span>
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-xs font-semibold text-red-400 tracking-widest uppercase">Conference Inception Countdown</span>
+          <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=27th+Central+Annual+Conference+2026+-+Medicine+Club&dates=20261014T120000Z/20261016T180000Z&details=27th+Central+Annual+Conference+of+Medicine+Club+Bangladesh.+Hosted+by+GSVMC+Unit.&location=PHA+Bhaban,+Gonoshasthaya+Kendra,+Savar,+Dhaka" target="_blank" rel="noopener noreferrer" class="text-xs text-indigo-300 hover:text-white bg-indigo-900/60 border border-indigo-700/60 px-3 py-1.5 rounded-lg flex items-center gap-1.5 transition">
+            <i class="fa-brands fa-google"></i>
+            <span>Add to Calendar</span>
+          </a>
+        </div>
         <div class="grid grid-cols-4 gap-3 text-center">
           <div class="bg-[#050a18]/90 rounded-xl p-3 border border-indigo-900/50"><span id="days" class="block text-2xl sm:text-4xl font-extrabold text-red-400">00</span><span class="text-[10px] text-slate-400 uppercase">Days</span></div>
           <div class="bg-[#050a18]/90 rounded-xl p-3 border border-indigo-900/50"><span id="hours" class="block text-2xl sm:text-4xl font-extrabold text-red-400">00</span><span class="text-[10px] text-slate-400 uppercase">Hours</span></div>
@@ -241,7 +256,6 @@
         </div>
       </div>
 
-      <!-- Registration Button -->
       <div class="mt-10 text-center flex flex-wrap justify-center gap-4">
         <a href="https://forms.gle/yifQK8Sw6WMCkWch6" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold transition shadow-md shadow-red-950/50">
           <span>Complete Registration Form</span>
@@ -321,6 +335,113 @@
     </div>
   </section>
 
+  <!-- FEATURE 1: Savar Transit & Venue Directions Guide -->
+  <section id="venue-transit" class="py-20 border-b border-indigo-950/60">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <span class="text-xs font-bold uppercase text-red-400 tracking-wider">How to Reach Savar</span>
+        <h2 class="text-3xl font-extrabold text-white mt-1">Venue Transit Guide</h2>
+        <p class="text-slate-400 text-sm mt-2">PHA Bhaban, Gonoshasthaya Kendra, Mirzanagar, Savar, Dhaka</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div class="custom-mesh-card border border-indigo-800/40 rounded-2xl p-5">
+          <div class="w-10 h-10 rounded-xl bg-red-950/80 border border-red-600/30 text-red-400 flex items-center justify-center text-lg mb-3">
+            <i class="fa-solid fa-bus"></i>
+          </div>
+          <h4 class="font-bold text-white text-sm mb-1">From Gabtoli / Dhaka City</h4>
+          <p class="text-xs text-slate-300/80 leading-relaxed">
+            Take any direct bus towards Nabinagar / Baipail (Thikana, Boishakhi, or Savar Paribahan). Get down at <strong>Mirzanagar Bus Stand</strong>, then take an auto-rickshaw directly to PHA Bhaban.
+          </p>
+        </div>
+
+        <div class="custom-mesh-card border border-indigo-800/40 rounded-2xl p-5">
+          <div class="w-10 h-10 rounded-xl bg-red-950/80 border border-red-600/30 text-red-400 flex items-center justify-center text-lg mb-3">
+            <i class="fa-solid fa-plane-arrival"></i>
+          </div>
+          <h4 class="font-bold text-white text-sm mb-1">From Airport / Uttara</h4>
+          <p class="text-xs text-slate-300/80 leading-relaxed">
+            Board the Ashulia / Baipail highway bus or direct ride-share via Abdullahpur - Baipail bypass road to Mirzanagar / Gonoshasthaya Kendra gate.
+          </p>
+        </div>
+
+        <div class="custom-mesh-card border border-indigo-800/40 rounded-2xl p-5">
+          <div class="w-10 h-10 rounded-xl bg-red-950/80 border border-red-600/30 text-red-400 flex items-center justify-center text-lg mb-3">
+            <i class="fa-solid fa-square-parking"></i>
+          </div>
+          <h4 class="font-bold text-white text-sm mb-1">Parking & Security</h4>
+          <p class="text-xs text-slate-300/80 leading-relaxed">
+            Designated vehicle parking and volunteer reception desks are operational at the main PHA Bhaban compound starting Wednesday 4:00 PM.
+          </p>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <a href="https://maps.google.com/?q=PHA+Bhaban+Gonoshasthaya+Kendra+Savar" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl custom-subcard hover:bg-indigo-900/60 border border-indigo-700/60 text-white font-semibold text-xs transition shadow-lg">
+          <i class="fa-solid fa-map-location-dot text-red-400"></i>
+          <span>Open PHA Bhaban in Google Maps</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE 2: Delegate FAQ Accordion -->
+  <section id="faq" class="py-20 border-b border-indigo-950/60">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <span class="text-xs font-bold uppercase text-red-400 tracking-wider">Common Inquiries</span>
+        <h2 class="text-3xl font-extrabold text-white mt-1">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="space-y-3 text-sm">
+        <div class="custom-mesh-card border border-indigo-800/40 rounded-2xl overflow-hidden">
+          <button onclick="toggleFaq(1)" class="w-full p-5 text-left font-bold text-white flex justify-between items-center cursor-pointer">
+            <span>What items are included in the delegate registration kit?</span>
+            <i id="faq-icon-1" class="fa-solid fa-chevron-down text-xs text-red-400 transition-transform"></i>
+          </button>
+          <div id="faq-ans-1" class="hidden px-5 pb-5 text-xs text-slate-300/90 border-t border-indigo-900/40 pt-3 leading-relaxed">
+            Registered delegates receive an official conference kit bag containing the commemorative 27th Conference T-shirt, delegate ID badge with lanyard, conference souvenir magazine, writing pad, pen, and meal access passes.
+          </div>
+        </div>
+
+        <div class="custom-mesh-card border border-indigo-800/40 rounded-2xl overflow-hidden">
+          <button onclick="toggleFaq(2)" class="w-full p-5 text-left font-bold text-white flex justify-between items-center cursor-pointer">
+            <span>Is accommodation provided for delegates from distant units?</span>
+            <i id="faq-icon-2" class="fa-solid fa-chevron-down text-xs text-red-400 transition-transform"></i>
+          </button>
+          <div id="faq-ans-2" class="hidden px-5 pb-5 text-xs text-slate-300/90 border-t border-indigo-900/40 pt-3 leading-relaxed">
+            Yes, safe and dedicated delegate accommodation is arranged within PHA Bhaban guest facilities for outstation medical college representatives. Please report to the registration desk by 6:00 PM on October 14.
+          </div>
+        </div>
+
+        <div class="custom-mesh-card border border-indigo-800/40 rounded-2xl overflow-hidden">
+          <button onclick="toggleFaq(3)" class="w-full p-5 text-left font-bold text-white flex justify-between items-center cursor-pointer">
+            <span>What is the dress code for the Rally and Inauguration?</span>
+            <i id="faq-icon-3" class="fa-solid fa-chevron-down text-xs text-red-400 transition-transform"></i>
+          </button>
+          <div id="faq-ans-3" class="hidden px-5 pb-5 text-xs text-slate-300/90 border-t border-indigo-900/40 pt-3 leading-relaxed">
+            All delegates are requested to wear the official conference T-shirt during the Grand Rally on Thursday morning. Formal or traditional attire is encouraged for the Inaugural Ceremony and Grand Dinner.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE 3: Commemorative Souvenir Submission Callout -->
+  <section class="py-14 border-b border-indigo-950/60 bg-gradient-to-r from-red-950/30 via-[#0a142c] to-indigo-950/40">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <span class="text-xs font-bold uppercase text-red-400 tracking-wider">Conference Publication</span>
+      <h3 class="text-2xl font-extrabold text-white mt-1 mb-3">Call for Literary & Memoir Submissions</h3>
+      <p class="text-xs text-slate-300 max-w-2xl mx-auto leading-relaxed mb-6">
+        Doctors, advisors, and student Medicinians are invited to contribute poems, memoirs, unit annual reports, and club history essays for the official 27th Conference Souvenir Magazine (স্মারক গ্রন্থ).
+      </p>
+      <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl custom-subcard border border-red-600/30 text-xs text-slate-200">
+        <i class="fa-solid fa-envelope text-red-400"></i>
+        <span>Send manuscripts to: <strong>medicineclub.gsvmcu@gmail.com</strong></span>
+      </div>
+    </div>
+  </section>
+
   <!-- Sponsorship Section -->
   <section id="sponsorship" class="py-20 border-b border-indigo-950/60 text-white">
     <div class="max-w-4xl mx-auto px-4 text-center">
@@ -353,7 +474,7 @@
     </div>
   </section>
 
-  <!-- Inquiry & Contact Desk -->
+  <!-- Inquiry & Contact Desk (With Direct WhatsApp Buttons) -->
   <section id="contact" class="py-16 border-b border-indigo-950/60">
     <div class="max-w-6xl mx-auto px-4 text-center">
       <span class="text-xs font-bold uppercase text-red-400 tracking-wider">Helpline & Secretariat</span>
@@ -361,34 +482,61 @@
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
         <!-- Kamrul Molla -->
-        <a href="tel:01998608723" class="p-6 custom-mesh-card border border-indigo-800/40 rounded-3xl hover:border-indigo-600/60 transition text-left flex items-center gap-4 shadow-lg">
-          <div class="w-12 h-12 rounded-2xl bg-red-950/80 border border-red-600/30 text-red-400 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-phone"></i></div>
-          <div>
-            <h4 class="font-bold text-white">Kamrul Molla</h4>
-            <p class="text-xs text-slate-400">President, GSVMC Unit (2025–2026)</p>
-            <p class="text-sm font-bold text-red-400 mt-1">01998-608723</p>
+        <div class="p-6 custom-mesh-card border border-indigo-800/40 rounded-3xl text-left shadow-lg">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-12 h-12 rounded-2xl bg-red-950/80 border border-red-600/30 text-red-400 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-user-doctor"></i></div>
+            <div>
+              <h4 class="font-bold text-white text-base">Kamrul Molla</h4>
+              <p class="text-xs text-slate-400">President, GSVMC Unit (2025–2026)</p>
+            </div>
           </div>
-        </a>
+          <div class="flex items-center gap-2 mt-2">
+            <a href="tel:01998608723" class="flex-1 py-2 px-3 rounded-xl bg-slate-900 border border-slate-700 text-xs font-bold text-slate-200 hover:text-white flex items-center justify-center gap-1.5 transition">
+              <i class="fa-solid fa-phone text-red-400"></i> Call
+            </a>
+            <a href="https://wa.me/8801998608723" target="_blank" rel="noopener noreferrer" class="py-2 px-3 rounded-xl bg-emerald-950/80 border border-emerald-600/50 text-xs font-bold text-emerald-400 hover:bg-emerald-900 transition flex items-center justify-center gap-1">
+              <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp
+            </a>
+          </div>
+        </div>
 
         <!-- Pangkaj Sharma -->
-        <a href="tel:01648929359" class="p-6 custom-mesh-card border border-indigo-800/40 rounded-3xl hover:border-indigo-600/60 transition text-left flex items-center gap-4 shadow-lg">
-          <div class="w-12 h-12 rounded-2xl bg-red-950/80 border border-red-600/30 text-red-400 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-phone"></i></div>
-          <div>
-            <h4 class="font-bold text-white">Pangkaj Sharma</h4>
-            <p class="text-xs text-slate-400">General Secretary, GSVMC Unit (2025–2026)</p>
-            <p class="text-sm font-bold text-red-400 mt-1">01648-929359</p>
+        <div class="p-6 custom-mesh-card border border-indigo-800/40 rounded-3xl text-left shadow-lg">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-12 h-12 rounded-2xl bg-red-950/80 border border-red-600/30 text-red-400 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-user-doctor"></i></div>
+            <div>
+              <h4 class="font-bold text-white text-base">Pangkaj Sharma</h4>
+              <p class="text-xs text-slate-400">General Secretary, GSVMC Unit (2025–2026)</p>
+            </div>
           </div>
-        </a>
+          <div class="flex items-center gap-2 mt-2">
+            <a href="tel:01648929359" class="flex-1 py-2 px-3 rounded-xl bg-slate-900 border border-slate-700 text-xs font-bold text-slate-200 hover:text-white flex items-center justify-center gap-1.5 transition">
+              <i class="fa-solid fa-phone text-red-400"></i> Call
+            </a>
+            <a href="https://wa.me/8801648929359" target="_blank" rel="noopener noreferrer" class="py-2 px-3 rounded-xl bg-emerald-950/80 border border-emerald-600/50 text-xs font-bold text-emerald-400 hover:bg-emerald-900 transition flex items-center justify-center gap-1">
+              <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp
+            </a>
+          </div>
+        </div>
 
         <!-- Md Labib Hasan Akand -->
-        <a href="tel:01641876864" class="p-6 custom-mesh-card border border-indigo-800/40 rounded-3xl hover:border-indigo-600/60 transition text-left flex items-center gap-4 shadow-lg">
-          <div class="w-12 h-12 rounded-2xl bg-red-950/80 border border-red-600/30 text-red-400 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-phone"></i></div>
-          <div>
-            <h4 class="font-bold text-white">Md Labib Hasan Akand</h4>
-            <p class="text-xs text-slate-400">Finance Secretary, Central Unit (2025–2026)</p>
-            <p class="text-sm font-bold text-red-400 mt-1">01641-876864</p>
+        <div class="p-6 custom-mesh-card border border-indigo-800/40 rounded-3xl text-left shadow-lg">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-12 h-12 rounded-2xl bg-red-950/80 border border-red-600/30 text-red-400 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-shield-halved"></i></div>
+            <div>
+              <h4 class="font-bold text-white text-base">Md Labib Hasan Akand</h4>
+              <p class="text-xs text-slate-400">Finance Secretary, Central Unit (2025–2026)</p>
+            </div>
           </div>
-        </a>
+          <div class="flex items-center gap-2 mt-2">
+            <a href="tel:01641876864" class="flex-1 py-2 px-3 rounded-xl bg-slate-900 border border-slate-700 text-xs font-bold text-slate-200 hover:text-white flex items-center justify-center gap-1.5 transition">
+              <i class="fa-solid fa-phone text-red-400"></i> Call
+            </a>
+            <a href="https://wa.me/8801641876864" target="_blank" rel="noopener noreferrer" class="py-2 px-3 rounded-xl bg-emerald-950/80 border border-emerald-600/50 text-xs font-bold text-emerald-400 hover:bg-emerald-900 transition flex items-center justify-center gap-1">
+              <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp
+            </a>
+          </div>
+        </div>
       </div>
 
       <div class="mt-12 pt-8 border-t border-indigo-950/60 text-xs text-slate-400 space-y-1">
@@ -434,6 +582,19 @@
   </div>
 
   <script>
+    // FAQ Accordion Toggle
+    function toggleFaq(id) {
+      const ans = document.getElementById(`faq-ans-${id}`);
+      const icon = document.getElementById(`faq-icon-${id}`);
+      if (ans.classList.contains('hidden')) {
+        ans.classList.remove('hidden');
+        icon.classList.add('rotate-180');
+      } else {
+        ans.classList.add('hidden');
+        icon.classList.remove('rotate-180');
+      }
+    }
+
     // In-Page PDF Modal Controls
     function openPdfModal() {
       const modal = document.getElementById('pdfModal');
