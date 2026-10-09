@@ -68,7 +68,7 @@
       <span class="text-[11px] text-red-400 mt-1">Tap anywhere to enter portal</span>
     </div>
 
-    <!-- Reference Style Pause / Skip Control -->
+    <!-- Skip / Pause Button -->
     <button onclick="dismissCelebration()" type="button" aria-label="Skip Celebration" class="absolute bottom-6 right-6 z-30 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white flex items-center justify-center transition cursor-pointer backdrop-blur-md shadow-lg">
       <i class="fa-solid fa-pause text-xs"></i>
     </button>
@@ -98,7 +98,7 @@
           <a href="#fees" class="hover:text-red-400 transition">Registration Fees</a>
           <a href="#units" class="hover:text-red-400 transition">Units (34)</a>
           <a href="#memoirs" class="hover:text-red-400 transition">Memoirs</a>
-          <a href="#gallery" class="hover:text-red-400 transition">Archive</a>
+          <a href="#heritage" class="hover:text-red-400 transition">Heritage</a>
           <a href="#venue-transit" class="hover:text-red-400 transition">Transit</a>
           <a href="#faq" class="hover:text-red-400 transition">FAQ</a>
           <a href="#contact" class="hover:text-red-400 transition">Inquiry</a>
@@ -157,7 +157,7 @@
         </div>
       </div>
 
-      <!-- Inception Countdown + Calendar Sync -->
+      <!-- Inception Countdown -->
       <div class="custom-mesh-card border border-indigo-700/50 rounded-2xl p-6 max-w-2xl mx-auto mb-10 shadow-2xl relative overflow-hidden">
         <div class="flex items-center justify-between mb-4">
           <span class="text-xs font-semibold text-red-400 tracking-widest uppercase">Conference Inception Countdown</span>
@@ -238,8 +238,8 @@
           <div class="space-y-3">
             <div class="p-4 custom-subcard border border-indigo-800/40 rounded-2xl">
               <span class="text-xs font-bold text-red-400 block"><i class="fa-regular fa-clock mr-1"></i> 04:00 PM</span>
-              <h4 class="font-bold text-white text-base mt-1">Cultural Night & Closing</h4>
-              <p class="text-xs text-slate-300/80 mt-1">Performances, crest ceremony, and concluding remarks.</p>
+              <h4 class="font-bold text-white text-base mt-1">Cultural Night</h4>
+              <p class="text-xs text-slate-300/80 mt-1">Performances, crest ceremony, and concluding fellowship.</p>
             </div>
             <div class="p-4 custom-subcard border border-indigo-800/40 rounded-2xl bg-gradient-to-r from-red-950/20 to-indigo-950/40">
               <span class="text-xs font-bold text-red-400 block"><i class="fa-solid fa-utensils mr-1"></i> 09:00 PM</span>
@@ -489,68 +489,197 @@
     </div>
   </section>
 
-  <!-- Legacy Archive & Gallery -->
-  <section id="gallery" class="py-20 border-b border-indigo-950/60 relative z-10">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="text-center mb-14">
-        <span class="text-xs font-bold uppercase text-red-400 tracking-wider">Heritage & Moments</span>
-        <h2 class="text-3xl font-extrabold text-white mt-1">Legacy Archive (1981–2026)</h2>
-        <p class="text-slate-400 text-sm mt-2">Historic snapshots from past central conferences, rallies, and humanitarian drives</p>
+  <!-- HERITAGE PHOTO ARCHIVE SECTION (1981 - 2026) -->
+  <section id="heritage" class="py-20 border-b border-indigo-950/60 relative z-10">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <span class="text-xs font-bold uppercase text-red-400 tracking-wider">Historical Archive</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Heritage & Legacy Archive</h2>
+        <p class="text-slate-400 text-sm mt-2">Historic snapshots from national central conferences, grand rallies, humanitarian medical camps, and cultural nights</p>
       </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-        <div class="group relative aspect-[4/3] rounded-2xl overflow-hidden border border-indigo-900/50 bg-[#0c1630]">
-          <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80" alt="Blood Donation Campaign" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-4">
-            <span class="text-xs font-bold text-white">Nationwide Voluntary Blood Drives</span>
+      <!-- Category Filter Tabs -->
+      <div class="flex flex-wrap justify-center items-center gap-2 sm:gap-3 mb-10 text-xs font-semibold">
+        <button onclick="filterHeritage('all')" id="tab-all" class="heritage-tab-btn px-4 py-2 rounded-xl bg-red-600 text-white transition shadow-sm">All Highlights (17)</button>
+        <button onclick="filterHeritage('rallies')" id="tab-rallies" class="heritage-tab-btn px-4 py-2 rounded-xl custom-subcard text-slate-300 hover:text-white border border-indigo-800/40 transition">Grand Rallies</button>
+        <button onclick="filterHeritage('assemblies')" id="tab-assemblies" class="heritage-tab-btn px-4 py-2 rounded-xl custom-subcard text-slate-300 hover:text-white border border-indigo-800/40 transition">Assemblies & Relief</button>
+        <button onclick="filterHeritage('cultural')" id="tab-cultural" class="heritage-tab-btn px-4 py-2 rounded-xl custom-subcard text-slate-300 hover:text-white border border-indigo-800/40 transition">Cultural Moments</button>
+      </div>
+
+      <!-- Responsive Heritage Image Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        
+        <!-- Photo 1: Placards Rally -->
+        <div class="heritage-item rallies group relative aspect-[4/3] rounded-2xl overflow-hidden border border-indigo-900/50 bg-[#0c1630] cursor-pointer" onclick="openPhotoViewer('./WhatsApp Image 2026-10-10 at 01.36.02 (1).jpeg', 'Central Conference Grand Rally - Nationwide Unit Placards')">
+          <img src="./WhatsApp%20Image%202026-10-10%20at%2001.36.02%20(1).jpeg" alt="Central Conference Grand Rally" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex items-end p-3">
+            <span class="text-xs font-bold text-white leading-tight">Central Conference Grand Rally</span>
           </div>
         </div>
 
-        <div class="group relative aspect-[4/3] rounded-2xl overflow-hidden border border-indigo-900/50 bg-[#0c1630]">
-          <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80" alt="Conference Seminar" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-4">
-            <span class="text-xs font-bold text-white">Central Scientific Assembly</span>
+        <!-- Photo 2: Green Shirts Rally -->
+        <div class="heritage-item rallies group relative aspect-[4/3] rounded-2xl overflow-hidden border border-indigo-900/50 bg-[#0c1630] cursor-pointer" onclick="openPhotoViewer('./WhatsApp Image 2026-10-10 at 01.36.02.jpeg', 'Central Conference Procession at PHA Bhaban')">
+          <img src="./WhatsApp%20Image%202026-10-10%20at%2001.36.02.jpeg" alt="Central Conference Procession at PHA Bhaban" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex items-end p-3">
+            <span class="text-xs font-bold text-white leading-tight">Conference Procession at PHA Bhaban</span>
           </div>
         </div>
 
-        <div class="group relative aspect-[4/3] rounded-2xl overflow-hidden border border-indigo-900/50 bg-[#0c1630]">
-          <img src="https://images.unsplash.com/photo-1526976668912-1a811878dd37?auto=format&fit=crop&w=800&q=80" alt="Youth Leadership Rally" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-4">
-            <span class="text-xs font-bold text-white">Grand Rally & Flag Hoisting</span>
+        <!-- Photo 3: 8th Half-Yearly Rally -->
+        <div class="heritage-item rallies group relative aspect-[4/3] rounded-2xl overflow-hidden border border-indigo-900/50 bg-[#0c1630] cursor-pointer" onclick="openPhotoViewer('./WhatsApp Image 2026-10-10 at 01.36.19.jpeg', '8th Half Yearly Conference Procession (2018)')">
+          <img src="./WhatsApp%20Image%202026-10-10%20at%2001.36.19.jpeg" alt="8th Half Yearly Conference Rally" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex items-end p-3">
+            <span class="text-xs font-bold text-white leading-tight">8th Half Yearly Conference Procession</span>
           </div>
         </div>
 
-        <div class="group relative aspect-[4/3] rounded-2xl overflow-hidden border border-indigo-900/50 bg-[#0c1630]">
-          <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=800&q=80" alt="Executive Meeting" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-4">
-            <span class="text-xs font-bold text-white">Central Council Meetings</span>
+        <!-- Photo 4: Blue Shirts Unit Rally -->
+        <div class="heritage-item rallies group relative aspect-[4/3] rounded-2xl overflow-hidden border border-indigo-900/50 bg-[#0c1630] cursor-pointer" onclick="openPhotoViewer('./WhatsApp Image 2026-10-10 at 01.36.19 (1).jpeg', 'Nationwide Unit Delegation Rally')">
+          <img src="./WhatsApp%20Image%202026-10-10%20at%2001.36.19%20(1).jpeg" alt="Nationwide Unit Delegation Rally" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex items-end p-3">
+            <span class="text-xs font-bold text-white leading-tight">Nationwide Unit Delegation Rally</span>
           </div>
         </div>
 
-        <div class="group relative aspect-[4/3] rounded-2xl overflow-hidden border border-indigo-900/50 bg-[#0c1630]">
-          <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=800&q=80" alt="Free Medical Camp" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-4">
-            <span class="text-xs font-bold text-white">Free Medical & Relief Camps</span>
+        <!-- Photo 5: Rally Frontline Placards -->
+        <div class="heritage-item rallies group relative aspect-[4/3] rounded-2xl overflow-hidden border border-indigo-900/50 bg-[#0c1630] cursor-pointer" onclick="openPhotoViewer('./WhatsApp Image 2026-10-10 at 01.36.02 (2).jpeg', 'Central Conference Banner & Unit Delegations')">
+          <img src="./WhatsApp%20Image%202026-10-10%20at%2001.36.02%20(2).jpeg" alt="Central Conference Banner" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex items-end p-3">
+            <span class="text-xs font-bold text-white leading-tight">Conference Banner & Units</span>
           </div>
         </div>
 
-        <div class="group relative aspect-[4/3] rounded-2xl overflow-hidden border border-indigo-900/50 bg-[#0c1630]">
-          <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80" alt="Cultural Evening" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-4">
-            <span class="text-xs font-bold text-white">Annual Cultural Night & Crest Ceremony</span>
+        <!-- Photo 6: Women Delegates Rally -->
+        <div class="heritage-item rallies group relative aspect-[4/3] rounded-2xl overflow-hidden border border-indigo-900/50 bg-[#0c1630] cursor-pointer" onclick="openPhotoViewer('./WhatsApp Image 2026-10-10 at 01.36.03 (1).jpeg', 'Nationwide Women Delegates Frontline')">
+          <img src="./WhatsApp%20Image%202026-10-10%20at%2001.36.03%20(1).jpeg" alt="Nationwide Women Delegates Frontline" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex items-end p-3">
+            <span class="text-xs font-bold text-white leading-tight">Women Delegates Frontline</span>
           </div>
         </div>
+
+        <!-- Photo 7: 27th Conference Campaign -->
+        <div class="heritage-item rallies group relative aspect-[4/3] rounded-2xl overflow-hidden border border-indigo-900/50 bg-[#0c1630] cursor-pointer" onclick="openPhotoViewer('./received_1640753760747772.jpeg', '27th Central Conference 2026 Poster Launch')">
+          <img src="./received_1640753760747772.jpeg" alt="27th Conference Campaign" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex items-end p-3">
+            <span class="text-xs font-bold text-white leading-tight">27th Conference Poster Launch (2026)</span>
+          </div>
+        </div>
+
+        <!-- Photo 8: Roundtable Dialogue -->
+        <div class="heritage-item assemblies group relative aspect-[4/3] rounded-2xl overflow-hidden border border-indigo-900/50 bg-[#0c1630] cursor-pointer" onclick="openPhotoViewer('./FB_IMG_1777362337403.jpg', 'National Physician Week Roundtable Dialogue')">
+          <img src="./FB_IMG_1777362337403.jpg" alt="Roundtable Dialogue" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex items-end p-3">
+            <span class="text-xs font-bold text-white leading-tight">National Roundtable Dialogue</span>
+          </div>
+        </div>
+
+        <!-- Photo 9: Central Council House -->
+        <div class="heritage-item assemblies group relative aspect-[4/3] rounded-2xl overflow-hidden border border-indigo-900/50 bg-[#0c1630] cursor-pointer" onclick="openPhotoViewer('./1000112241.jpg', 'Central Council & House Deliberations')">
+          <img src="./1000112241.jpg" alt="Central Council House" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex items-end p-3">
+            <span class="text-xs font-bold text-white leading-tight">Central Council Assembly</span>
+          </div>
+        </div>
+
+        <!-- Photo 10: 26th Conference Session Room -->
+        <div class="heritage-item assemblies group relative aspect-[4/3] rounded-2xl overflow-hidden border border-indigo-900/50 bg-[#0c1630] cursor-pointer" onclick="openPhotoViewer('./FB_IMG_1747498340111.jpg', '26th Central Annual Conference 2025 - Council Session')">
+          <img src="./FB_IMG_1747498340111.jpg" alt="26th Conference Session" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex items-end p-3">
+            <span class="text-xs font-bold text-white leading-tight">26th Conference Session Room (2025)</span>
+          </div>
+        </div>
+
+        <!-- Photo 11: 26th Conference Presidium -->
+        <div class="heritage-item assemblies group relative aspect-[4/3] rounded-2xl overflow-hidden border border-indigo-900/50 bg-[#0c1630] cursor-pointer" onclick="openPhotoViewer('./FB_IMG_1747513377729.jpg', 'Central President & General Secretary Council')">
+          <img src="./FB_IMG_1747513377729.jpg" alt="Central Presidium" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex items-end p-3">
+            <span class="text-xs font-bold text-white leading-tight">Central Presidium Council Table</span>
+          </div>
+        </div>
+
+        <!-- Photo 12: 2022 Grand Inaugural Stage -->
+        <div class="heritage-item assemblies group relative aspect-[4/3] rounded-2xl overflow-hidden border border-indigo-900/50 bg-[#0c1630] cursor-pointer" onclick="openPhotoViewer('./1000112240.jpg', 'Annual Conference 2022 Inaugural Ceremony')">
+          <img src="./1000112240.jpg" alt="Inaugural Ceremony Stage 2022" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex items-end p-3">
+            <span class="text-xs font-bold text-white leading-tight">Inaugural Ceremony Stage (2022)</span>
+          </div>
+        </div>
+
+        <!-- Photo 13: Voluntary Blood Donation -->
+        <div class="heritage-item assemblies group relative aspect-[4/3] rounded-2xl overflow-hidden border border-indigo-900/50 bg-[#0c1630] cursor-pointer" onclick="openPhotoViewer('./FB_IMG_1769627046649.jpg', 'Voluntary Blood Donation Drive')">
+          <img src="./FB_IMG_1769627046649.jpg" alt="Voluntary Blood Donation" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex items-end p-3">
+            <span class="text-xs font-bold text-white leading-tight">Voluntary Blood Donation Drive</span>
+          </div>
+        </div>
+
+        <!-- Photo 14: Blood Grouping & Screening Camp -->
+        <div class="heritage-item assemblies group relative aspect-[4/3] rounded-2xl overflow-hidden border border-indigo-900/50 bg-[#0c1630] cursor-pointer" onclick="openPhotoViewer('./FB_IMG_1769626872706.jpg', 'Free Blood Grouping & Screening Desk')">
+          <img src="./FB_IMG_1769626872706.jpg" alt="Blood Grouping Camp" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex items-end p-3">
+            <span class="text-xs font-bold text-white leading-tight">Free Blood Grouping & Screening</span>
+          </div>
+        </div>
+
+        <!-- Photo 15: Winter Clothes Relief -->
+        <div class="heritage-item assemblies group relative aspect-[4/3] rounded-2xl overflow-hidden border border-indigo-900/50 bg-[#0c1630] cursor-pointer" onclick="openPhotoViewer('./FB_IMG_1768291098104.jpg', 'Winter Clothes & Humanitarian Relief Distribution')">
+          <img src="./FB_IMG_1768291098104.jpg" alt="Winter Clothes Relief" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex items-end p-3">
+            <span class="text-xs font-bold text-white leading-tight">Winter Relief Distribution</span>
+          </div>
+        </div>
+
+        <!-- Photo 16: Essential Medicine Relief -->
+        <div class="heritage-item assemblies group relative aspect-[4/3] rounded-2xl overflow-hidden border border-indigo-900/50 bg-[#0c1630] cursor-pointer" onclick="openPhotoViewer('./FB_IMG_1769627128918.jpg', 'Essential Medicine Relief Inventory')">
+          <img src="./FB_IMG_1769627128918.jpg" alt="Medicine Relief Inventory" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex items-end p-3">
+            <span class="text-xs font-bold text-white leading-tight">Essential Medicine Relief Stock</span>
+          </div>
+        </div>
+
+        <!-- Photo 17: Cultural Night Performance -->
+        <div class="heritage-item cultural group relative aspect-[4/3] rounded-2xl overflow-hidden border border-indigo-900/50 bg-[#0c1630] cursor-pointer" onclick="openPhotoViewer('./1000112245.jpg', 'Annual Cultural Night Live Musical Performance')">
+          <img src="./1000112245.jpg" alt="Cultural Night Performance" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex items-end p-3">
+            <span class="text-xs font-bold text-white leading-tight">Cultural Night Live Musical Stage</span>
+          </div>
+        </div>
+
+        <!-- Photo 18: Cultural Fellowship Reunion -->
+        <div class="heritage-item cultural group relative aspect-[4/3] rounded-2xl overflow-hidden border border-indigo-900/50 bg-[#0c1630] cursor-pointer" onclick="openPhotoViewer('./WhatsApp Image 2026-10-10 at 01.36.03.jpeg', 'Cultural Fellowship & Delegate Reunion')">
+          <img src="./WhatsApp%20Image%202026-10-10%20at%2001.36.03.jpeg" alt="Cultural Fellowship" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex items-end p-3">
+            <span class="text-xs font-bold text-white leading-tight">Cultural Fellowship & Reunion</span>
+          </div>
+        </div>
+
+        <!-- Photo 19: Conference Tiger Mascot -->
+        <div class="heritage-item cultural group relative aspect-[4/3] rounded-2xl overflow-hidden border border-indigo-900/50 bg-[#0c1630] cursor-pointer" onclick="openPhotoViewer('./WhatsApp Image 2026-10-10 at 01.36.19 (2).jpeg', 'Conference Mascot & Fellow Delegations')">
+          <img src="./WhatsApp%20Image%202026-10-10%20at%2001.36.19%20(2).jpeg" alt="Conference Mascot" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex items-end p-3">
+            <span class="text-xs font-bold text-white leading-tight">Conference Mascot & Fellowship</span>
+          </div>
+        </div>
+
+        <!-- Photo 20: Souvenir Poster Unveiling -->
+        <div class="heritage-item cultural group relative aspect-[4/3] rounded-2xl overflow-hidden border border-indigo-900/50 bg-[#0c1630] cursor-pointer" onclick="openPhotoViewer('./FB_IMG_1790066770783.jpg', 'Central Conference Publication Launch')">
+          <img src="./FB_IMG_1790066770783.jpg" alt="Publication Launch" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex items-end p-3">
+            <span class="text-xs font-bold text-white leading-tight">Central Publication Launch</span>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Savar Transit & Venue Directions Guide -->
+  <!-- Savar Transit & Venue Directions Guide (UPDATED TO NABINAGAR) -->
   <section id="venue-transit" class="py-20 border-b border-indigo-950/60 relative z-10">
     <div class="max-w-5xl mx-auto px-4">
       <div class="text-center mb-12">
         <span class="text-xs font-bold uppercase text-red-400 tracking-wider">How to Reach Savar</span>
         <h2 class="text-3xl font-extrabold text-white mt-1">Venue Transit Guide</h2>
-        <p class="text-slate-400 text-sm mt-2">PHA Bhaban, Gonoshasthaya Kendra, Mirzanagar, Savar, Dhaka</p>
+        <p class="text-slate-400 text-sm mt-2">PHA Bhaban, Gonoshasthaya Kendra, Nabinagar, Savar, Dhaka</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -560,7 +689,7 @@
           </div>
           <h4 class="font-bold text-white text-sm mb-1">From Gabtoli / Dhaka City</h4>
           <p class="text-xs text-slate-300/80 leading-relaxed">
-            Take any direct bus towards Nabinagar / Baipail (Thikana, Boishakhi, or Savar Paribahan). Get down at <strong>Mirzanagar Bus Stand</strong>, then take an auto-rickshaw directly to PHA Bhaban.
+            Take any direct bus towards Nabinagar / Baipail (Thikana, Boishakhi, or Savar Paribahan). Get down at <strong>Nabinagar Bus Stand</strong>, then take an auto-rickshaw directly to PHA Bhaban.
           </p>
         </div>
 
@@ -570,7 +699,7 @@
           </div>
           <h4 class="font-bold text-white text-sm mb-1">From Airport / Uttara</h4>
           <p class="text-xs text-slate-300/80 leading-relaxed">
-            Board the Ashulia / Baipail highway bus or direct ride-share via Abdullahpur - Baipail bypass road to Mirzanagar / Gonoshasthaya Kendra gate.
+            Board the Ashulia / Baipail highway bus or direct ride-share via Abdullahpur - Baipail bypass road to Nabinagar / Gonoshasthaya Kendra gate.
           </p>
         </div>
 
@@ -719,7 +848,7 @@
             <div class="w-12 h-12 rounded-2xl bg-red-950/80 border border-red-600/30 text-red-400 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-shield-halved"></i></div>
             <div>
               <h4 class="font-bold text-white text-base">Md Labib Hasan Akand</h4>
-              <p class="text-xs text-slate-400">Finance Secretary, Central Unit (2025–2026)</p>
+              <p class="text-xs text-slate-400">Finance Secretary, Central Committee (2025–2026)</p>
             </div>
           </div>
           <div class="flex items-center gap-2 mt-2">
@@ -808,6 +937,17 @@
     </div>
   </div>
 
+  <!-- Interactive Heritage Photo Viewer Modal -->
+  <div id="photoModal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-md flex items-center justify-center p-3 sm:p-6" onclick="closePhotoViewer()">
+    <div class="relative max-w-4xl max-h-[90vh] flex flex-col items-center" onclick="event.stopPropagation()">
+      <button onclick="closePhotoViewer()" class="absolute -top-12 right-0 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition cursor-pointer">
+        <i class="fa-solid fa-xmark text-sm"></i>
+      </button>
+      <img id="photoModalImg" src="" alt="Medicine Club Heritage" class="max-w-full max-h-[75vh] rounded-2xl object-contain shadow-2xl border border-indigo-800/40">
+      <p id="photoModalCaption" class="text-slate-200 text-xs sm:text-sm font-semibold mt-4 text-center px-4"></p>
+    </div>
+  </div>
+
   <script>
     // FULLSCREEN DYNAMIC CELEBRATION CONFETTI ENGINE
     let confettiAnimationTimer = null;
@@ -822,11 +962,9 @@
 
       const duration = 4000;
       const end = Date.now() + duration;
-
       const colors = ['#dc2626', '#f59e0b', '#3b82f6', '#10b981', '#ec4899', '#ffffff'];
 
       (function frame() {
-        // Continuous showers from both top corners
         myConfetti({
           particleCount: 4,
           angle: 60,
@@ -841,7 +979,6 @@
           origin: { x: 1, y: 0.1 },
           colors: colors
         });
-        // Occasional bursts in the center around the emblem
         if (Math.random() < 0.2) {
           myConfetti({
             particleCount: 15,
@@ -850,13 +987,11 @@
             colors: colors
           });
         }
-
         if (Date.now() < end) {
           requestAnimationFrame(frame);
         }
       }());
 
-      // Auto fade-out after 4.5 seconds
       confettiAnimationTimer = setTimeout(() => {
         dismissCelebration();
       }, 4500);
@@ -870,10 +1005,41 @@
       }
     }
 
-    // Trigger immediately upon page load
     window.addEventListener('load', () => {
       startAutomaticCelebration();
     });
+
+    // Heritage Filter Tabs Logic
+    function filterHeritage(category) {
+      const items = document.querySelectorAll('.heritage-item');
+      const tabs = document.querySelectorAll('.heritage-tab-btn');
+      
+      tabs.forEach(tab => {
+        tab.className = "heritage-tab-btn px-4 py-2 rounded-xl custom-subcard text-slate-300 hover:text-white border border-indigo-800/40 transition cursor-pointer";
+      });
+      const activeTab = document.getElementById(`tab-${category}`);
+      if (activeTab) {
+        activeTab.className = "heritage-tab-btn px-4 py-2 rounded-xl bg-red-600 text-white transition shadow-sm cursor-pointer";
+      }
+
+      items.forEach(item => {
+        if (category === 'all' || item.classList.contains(category)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // Photo Modal Viewer
+    function openPhotoViewer(src, caption) {
+      document.getElementById('photoModalImg').src = src;
+      document.getElementById('photoModalCaption').innerText = caption;
+      document.getElementById('photoModal').classList.remove('hidden');
+    }
+    function closePhotoViewer() {
+      document.getElementById('photoModal').classList.add('hidden');
+    }
 
     // Memoir Modal Functions
     function openMemoirModal(title, author, content) {
@@ -882,7 +1048,6 @@
       document.getElementById('memoirModalBody').innerText = content;
       document.getElementById('memoirModal').classList.remove('hidden');
     }
-
     function closeMemoirModal() {
       document.getElementById('memoirModal').classList.add('hidden');
     }
@@ -900,14 +1065,13 @@
       }
     }
 
-    // In-Page PDF Modal Controls
+    // PDF Modal Controls
     function openPdfModal() {
       const modal = document.getElementById('pdfModal');
       const iframe = document.getElementById('pdfIframe');
       iframe.src = './invitation-letter.pdf#toolbar=1&navpanes=0';
       modal.classList.remove('hidden');
     }
-
     function closePdfModal() {
       const modal = document.getElementById('pdfModal');
       const iframe = document.getElementById('pdfIframe');
