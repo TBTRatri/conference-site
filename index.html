@@ -92,6 +92,7 @@
           </div>
         </a>
         
+        <!-- Desktop Links -->
         <div class="hidden xl:flex items-center gap-5 font-semibold text-sm text-slate-300">
           <a href="#schedule" class="hover:text-red-400 transition">Schedule</a>
           <a href="#guests" class="hover:text-red-400 transition">Dignitaries</a>
@@ -113,6 +114,39 @@
             <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
           </a>
         </div>
+
+        <!-- Mobile Hamburger Button -->
+        <div class="flex items-center xl:hidden">
+          <button onclick="toggleMobileMenu()" id="mobileMenuBtn" type="button" aria-label="Toggle navigation menu" class="w-10 h-10 rounded-xl bg-slate-900 border border-indigo-800/60 text-slate-200 hover:text-white flex items-center justify-center transition cursor-pointer">
+            <i id="menuIcon" class="fa-solid fa-bars text-lg"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileMenu" class="hidden xl:hidden bg-[#050a18]/98 border-b border-indigo-900/60 px-5 pt-3 pb-6 space-y-3 transition-all duration-300">
+      <div class="grid grid-cols-2 gap-2 text-sm font-semibold pt-2">
+        <a href="#schedule" onclick="toggleMobileMenu()" class="p-2.5 rounded-lg bg-indigo-950/40 text-slate-200 hover:text-red-400">Schedule</a>
+        <a href="#guests" onclick="toggleMobileMenu()" class="p-2.5 rounded-lg bg-indigo-950/40 text-slate-200 hover:text-red-400">Dignitaries</a>
+        <a href="#fees" onclick="toggleMobileMenu()" class="p-2.5 rounded-lg bg-indigo-950/40 text-slate-200 hover:text-red-400">Fees</a>
+        <a href="#units" onclick="toggleMobileMenu()" class="p-2.5 rounded-lg bg-indigo-950/40 text-slate-200 hover:text-red-400">Units (34)</a>
+        <a href="#memoirs" onclick="toggleMobileMenu()" class="p-2.5 rounded-lg bg-indigo-950/40 text-slate-200 hover:text-red-400">Memoirs</a>
+        <a href="#heritage" onclick="toggleMobileMenu()" class="p-2.5 rounded-lg bg-indigo-950/40 text-slate-200 hover:text-red-400">Heritage</a>
+        <a href="#venue-transit" onclick="toggleMobileMenu()" class="p-2.5 rounded-lg bg-indigo-950/40 text-slate-200 hover:text-red-400">Transit</a>
+        <a href="#faq" onclick="toggleMobileMenu()" class="p-2.5 rounded-lg bg-indigo-950/40 text-slate-200 hover:text-red-400">FAQ</a>
+        <a href="#contact" onclick="toggleMobileMenu()" class="p-2.5 rounded-lg bg-indigo-950/40 text-slate-200 hover:text-red-400 col-span-2">Helpline / Inquiry</a>
+      </div>
+      
+      <div class="pt-2 flex flex-col gap-2">
+        <button onclick="toggleMobileMenu(); openPdfModal();" type="button" class="w-full py-2.5 rounded-xl bg-indigo-950 text-slate-200 font-bold text-xs flex items-center justify-center gap-2 border border-indigo-700/50">
+          <i class="fa-solid fa-file-pdf text-red-500"></i>
+          <span>Official Invitation Letter</span>
+        </button>
+        <a href="https://forms.gle/yifQK8Sw6WMCkWch6" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-lg shadow-red-950/60">
+          <span>Register Now</span>
+          <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+        </a>
       </div>
     </div>
   </nav>
@@ -647,7 +681,7 @@
 
         <!-- Photo 18: Cultural Fellowship Reunion -->
         <div class="heritage-item cultural group relative aspect-[4/3] rounded-2xl overflow-hidden border border-indigo-900/50 bg-[#0c1630] cursor-pointer" onclick="openPhotoViewer('./WhatsApp Image 2026-10-10 at 01.36.03.jpeg', 'Cultural Fellowship & Delegate Reunion')">
-          <img src="./WhatsApp%20Image%202026-10-10%20at%2001.36.03.jpeg" alt="Cultural Fellowship" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <img src="./WhatsApp%20Image%202026-10-10%20at%2001.36.03%20(1).jpeg" alt="Cultural Fellowship" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
           <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex items-end p-3">
             <span class="text-xs font-bold text-white leading-tight">Cultural Fellowship & Reunion</span>
           </div>
@@ -673,7 +707,7 @@
     </div>
   </section>
 
-  <!-- Savar Transit & Venue Directions Guide (UPDATED TO NABINAGAR) -->
+  <!-- Savar Transit & Venue Directions Guide -->
   <section id="venue-transit" class="py-20 border-b border-indigo-950/60 relative z-10">
     <div class="max-w-5xl mx-auto px-4">
       <div class="text-center mb-12">
@@ -949,6 +983,21 @@
   </div>
 
   <script>
+    // MOBILE DRAWER TOGGLE FUNCTION
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const icon = document.getElementById('menuIcon');
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-xmark');
+      } else {
+        menu.classList.add('hidden');
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+      }
+    }
+
     // FULLSCREEN DYNAMIC CELEBRATION CONFETTI ENGINE
     let confettiAnimationTimer = null;
     function startAutomaticCelebration() {
