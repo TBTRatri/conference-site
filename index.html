@@ -14,14 +14,14 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Canvas Confetti for Celebration Lightwork -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
 
   <style>
     body { 
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', 'Hind Siliguri', sans-serif;
       background: radial-gradient(circle at 85% 15%, #3b5cb8 0%, #15224a 35%, #070c1b 70%, #03060f 100%);
       background-attachment: fixed;
     }
@@ -49,14 +49,43 @@
     .pulse-logo {
       animation: gentlePulse 3s infinite ease-in-out;
     }
+
+    /* Floating Celebration Balloons */
+    .balloon {
+      position: absolute;
+      bottom: -150px;
+      width: 48px;
+      height: 60px;
+      border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+      animation: floatUp 5s ease-in forwards;
+      pointer-events: none;
+      opacity: 0.9;
+    }
+    .balloon::after {
+      content: "";
+      position: absolute;
+      bottom: -12px;
+      left: 23px;
+      width: 2px;
+      height: 14px;
+      background: rgba(255, 255, 255, 0.5);
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+      15% { opacity: 0.95; }
+      100% { transform: translateY(-120vh) rotate(15deg); opacity: 0; }
+    }
   </style>
 </head>
 <body class="text-slate-100 antialiased selection:bg-red-600 selection:text-white min-h-screen relative overflow-x-hidden">
 
-  <!-- FULLSCREEN AUTOMATIC CELEBRATION OVERLAY -->
-  <div id="celebrationOverlay" class="fixed inset-0 z-50 flex items-center justify-center bg-[#040816]/95 backdrop-blur-xl">
+  <!-- FULLSCREEN AUTOMATIC CELEBRATION OVERLAY WITH BALLOONS & LIGHTS -->
+  <div id="celebrationOverlay" class="fixed inset-0 z-50 flex items-center justify-center bg-[#040816]/95 backdrop-blur-xl overflow-hidden">
     <canvas id="confettiCanvas" class="absolute inset-0 w-full h-full pointer-events-none z-10"></canvas>
     
+    <!-- Balloon Container -->
+    <div id="balloonContainer" class="absolute inset-0 pointer-events-none z-15 overflow-hidden"></div>
+
     <!-- Central Celebration Emblem -->
     <div class="relative z-20 flex flex-col items-center justify-center p-6 text-center max-w-lg cursor-pointer" onclick="dismissCelebration()">
       <div class="w-64 sm:w-80 md:w-96 p-4 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md shadow-2xl mb-4">
@@ -75,7 +104,7 @@
   </div>
 
   <!-- Navigation -->
-  <nav class="sticky top-0 z-40 bg-[#050a18]/90 backdrop-blur-md border-b border-indigo-900/40">
+  <nav class="sticky top-0 z-40 bg-[#050a18]/95 backdrop-blur-md border-b border-indigo-900/40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-20">
         <a href="#" class="flex items-center gap-3.5 group">
@@ -124,21 +153,39 @@
       </div>
     </div>
 
-    <!-- Mobile Navigation Drawer -->
-    <div id="mobileMenu" class="hidden xl:hidden bg-[#050a18]/98 border-b border-indigo-900/60 px-5 pt-3 pb-6 space-y-3 transition-all duration-300">
-      <div class="grid grid-cols-2 gap-2 text-sm font-semibold pt-2">
-        <a href="#schedule" onclick="toggleMobileMenu()" class="p-2.5 rounded-lg bg-indigo-950/40 text-slate-200 hover:text-red-400">Schedule</a>
-        <a href="#guests" onclick="toggleMobileMenu()" class="p-2.5 rounded-lg bg-indigo-950/40 text-slate-200 hover:text-red-400">Dignitaries</a>
-        <a href="#fees" onclick="toggleMobileMenu()" class="p-2.5 rounded-lg bg-indigo-950/40 text-slate-200 hover:text-red-400">Fees</a>
-        <a href="#units" onclick="toggleMobileMenu()" class="p-2.5 rounded-lg bg-indigo-950/40 text-slate-200 hover:text-red-400">Units (34)</a>
-        <a href="#memoirs" onclick="toggleMobileMenu()" class="p-2.5 rounded-lg bg-indigo-950/40 text-slate-200 hover:text-red-400">Memoirs</a>
-        <a href="#heritage" onclick="toggleMobileMenu()" class="p-2.5 rounded-lg bg-indigo-950/40 text-slate-200 hover:text-red-400">Heritage</a>
-        <a href="#venue-transit" onclick="toggleMobileMenu()" class="p-2.5 rounded-lg bg-indigo-950/40 text-slate-200 hover:text-red-400">Transit</a>
-        <a href="#faq" onclick="toggleMobileMenu()" class="p-2.5 rounded-lg bg-indigo-950/40 text-slate-200 hover:text-red-400">FAQ</a>
-        <a href="#contact" onclick="toggleMobileMenu()" class="p-2.5 rounded-lg bg-indigo-950/40 text-slate-200 hover:text-red-400 col-span-2">Helpline / Inquiry</a>
+    <!-- Mobile Navigation Drawer (BRACU Style Full Column) -->
+    <div id="mobileMenu" class="hidden xl:hidden bg-[#050a18]/98 border-b border-indigo-900/60 px-6 py-4 space-y-2.5 transition-all duration-300">
+      <div class="flex flex-col divide-y divide-indigo-950 text-sm font-semibold">
+        <a href="#schedule" onclick="toggleMobileMenu()" class="py-2.5 text-slate-200 hover:text-red-400 flex justify-between items-center">
+          <span>Schedule</span><i class="fa-solid fa-chevron-right text-[10px] text-slate-500"></i>
+        </a>
+        <a href="#guests" onclick="toggleMobileMenu()" class="py-2.5 text-slate-200 hover:text-red-400 flex justify-between items-center">
+          <span>Dignitaries</span><i class="fa-solid fa-chevron-right text-[10px] text-slate-500"></i>
+        </a>
+        <a href="#fees" onclick="toggleMobileMenu()" class="py-2.5 text-slate-200 hover:text-red-400 flex justify-between items-center">
+          <span>Registration Fees</span><i class="fa-solid fa-chevron-right text-[10px] text-slate-500"></i>
+        </a>
+        <a href="#units" onclick="toggleMobileMenu()" class="py-2.5 text-slate-200 hover:text-red-400 flex justify-between items-center">
+          <span>Units (34)</span><i class="fa-solid fa-chevron-right text-[10px] text-slate-500"></i>
+        </a>
+        <a href="#memoirs" onclick="toggleMobileMenu()" class="py-2.5 text-slate-200 hover:text-red-400 flex justify-between items-center">
+          <span>Memoirs</span><i class="fa-solid fa-chevron-right text-[10px] text-slate-500"></i>
+        </a>
+        <a href="#heritage" onclick="toggleMobileMenu()" class="py-2.5 text-slate-200 hover:text-red-400 flex justify-between items-center">
+          <span>Heritage</span><i class="fa-solid fa-chevron-right text-[10px] text-slate-500"></i>
+        </a>
+        <a href="#venue-transit" onclick="toggleMobileMenu()" class="py-2.5 text-slate-200 hover:text-red-400 flex justify-between items-center">
+          <span>Transit Guide</span><i class="fa-solid fa-chevron-right text-[10px] text-slate-500"></i>
+        </a>
+        <a href="#faq" onclick="toggleMobileMenu()" class="py-2.5 text-slate-200 hover:text-red-400 flex justify-between items-center">
+          <span>FAQ</span><i class="fa-solid fa-chevron-right text-[10px] text-slate-500"></i>
+        </a>
+        <a href="#contact" onclick="toggleMobileMenu()" class="py-2.5 text-slate-200 hover:text-red-400 flex justify-between items-center">
+          <span>Inquiry & Helpline</span><i class="fa-solid fa-chevron-right text-[10px] text-slate-500"></i>
+        </a>
       </div>
       
-      <div class="pt-2 flex flex-col gap-2">
+      <div class="pt-3 flex flex-col gap-2.5">
         <button onclick="toggleMobileMenu(); openPdfModal();" type="button" class="w-full py-2.5 rounded-xl bg-indigo-950 text-slate-200 font-bold text-xs flex items-center justify-center gap-2 border border-indigo-700/50">
           <i class="fa-solid fa-file-pdf text-red-500"></i>
           <span>Official Invitation Letter</span>
@@ -343,44 +390,112 @@
     </div>
   </section>
 
-  <!-- Guests & Dignitaries -->
+  <!-- Guests & Dignitaries (OFFICIAL INVITATION CARD ALIGNED) -->
   <section id="guests" class="py-20 border-b border-indigo-950/60 relative z-10">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-14">
-        <span class="text-xs font-bold uppercase text-red-400 tracking-wider">Conference Dignitaries</span>
-        <h2 class="text-3xl font-extrabold text-white mt-1">Guests of Honor</h2>
+        <span class="text-xs font-bold uppercase text-red-400 tracking-wider">সম্মেলন অতিথি ও গুণীজন</span>
+        <h2 class="text-3xl font-extrabold text-white mt-1">Honorable Dignitaries</h2>
+        <p class="text-slate-400 text-xs sm:text-sm mt-1">২৬তম বার্ষিক সম্মেলন পরবর্তী ২৭তম কেন্দ্রীয় সম্মেলন ২০২৬</p>
       </div>
 
+      <!-- Chief Guest & Inaugurator -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-10">
+        <!-- Chief Guest -->
         <div class="p-6 custom-mesh-card border border-indigo-800/40 rounded-3xl shadow-lg">
-          <span class="px-3 py-1 bg-red-950/80 text-red-400 border border-red-700/60 text-xs font-bold rounded-full mb-3 inline-block">Chief Guest</span>
-          <h3 class="text-xl font-bold text-white">Dr. Dewan Mohammad Salauddin MP</h3>
-          <p class="text-sm text-red-400 font-semibold mt-1">Honorable Member of Parliament, Dhaka-19</p>
-          <p class="text-xs text-slate-300/80 mt-2 leading-relaxed">Assistant Family Welfare Secretary, BNP • Former President, Dhaka District BNP</p>
+          <span class="px-3 py-1 bg-red-950/80 text-red-400 border border-red-700/60 text-xs font-bold rounded-full mb-3 inline-block">প্রধান অতিথি</span>
+          <h3 class="text-xl font-bold text-white">ডা. দেওয়ান মোহাম্মদ সালাউদ্দিন এমপি</h3>
+          <p class="text-sm text-red-400 font-semibold mt-1">মাননীয় সংসদ সদস্য, ঢাকা-১৯</p>
+          <p class="text-xs text-slate-300/90 mt-2 leading-relaxed">
+            সহ-পরিবার কল্যাণ বিষয়ক সম্পাদক, বাংলাদেশ জাতীয়তাবাদী দল (বিএনপি) • সাবেক সভাপতি, ঢাকা জেলা বিএনপি
+          </p>
         </div>
 
+        <!-- Inaugurator -->
         <div class="p-6 custom-mesh-card border border-indigo-800/40 rounded-3xl shadow-lg">
-          <span class="px-3 py-1 bg-red-950/80 text-red-400 border border-red-700/60 text-xs font-bold rounded-full mb-3 inline-block">Inaugurator</span>
-          <h3 class="text-xl font-bold text-white">Prof. Dr. F. M. Siddiqui</h3>
-          <p class="text-sm text-red-400 font-semibold mt-1">Vice-Chancellor</p>
-          <p class="text-xs text-slate-300/80 mt-2 leading-relaxed">Bangladesh Medical University</p>
+          <span class="px-3 py-1 bg-red-950/80 text-red-400 border border-red-700/60 text-xs font-bold rounded-full mb-3 inline-block">উদ্বোধক</span>
+          <h3 class="text-xl font-bold text-white">অধ্যাপক ডা. মোহাম্মদ রফিকুল ইসলাম</h3>
+          <p class="text-sm text-red-400 font-semibold mt-1">স্বাস্থ্য বিষয়ক সম্পাদক, বিএনপি</p>
+          <p class="text-xs text-slate-300/90 mt-2 leading-relaxed">
+            অধ্যাপক, ইউরোলজি বিভাগ, বাংলাদেশ মেডিকেল বিশ্ববিদ্যালয়
+          </p>
         </div>
       </div>
 
-      <!-- Special Guests -->
-      <div class="custom-mesh-card border border-indigo-900/50 rounded-3xl p-8 max-w-5xl mx-auto">
-        <h4 class="text-sm font-bold uppercase tracking-wider text-red-400 mb-6 text-center">Special Guests</h4>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 text-xs">
-          <div class="p-4 custom-subcard border border-indigo-800/40 rounded-2xl"><p class="font-bold text-white text-sm text-red-300">Prof. Dr. Mohammad Rafiqul Islam</p><p class="text-slate-300/80 mt-0.5">Head of Department, Urology, Bangladesh Medical University</p></div>
-          <div class="p-4 custom-subcard border border-indigo-800/40 rounded-2xl"><p class="font-bold text-white">Prof. Dr. Md. Abul Hossain</p><p class="text-slate-300/80">Vice-Chancellor, Gono Bishwabidyalay</p></div>
-          <div class="p-4 custom-subcard border border-indigo-800/40 rounded-2xl"><p class="font-bold text-white">Prof. Dr. Sayedur Rahman</p><p class="text-slate-300/80">Project Coordinator, GK • Former VC, BMU</p></div>
-          <div class="p-4 custom-subcard border border-indigo-800/40 rounded-2xl"><p class="font-bold text-white">Prof. Dr. Provat Chandra Biswas</p><p class="text-slate-300/80">Director General, DGHS</p></div>
-          <div class="p-4 custom-subcard border border-indigo-800/40 rounded-2xl"><p class="font-bold text-white">Dr. Md. Fazle Bari</p><p class="text-slate-300/80">UH&FPO, Savar</p></div>
-          <div class="p-4 custom-subcard border border-indigo-800/40 rounded-2xl"><p class="font-bold text-white">A. H. M. Shafiquzzaman</p><p class="text-slate-300/80">Chief Executive Officer, Gonoshasthaya Kendra</p></div>
-          <div class="p-4 custom-subcard border border-indigo-800/40 rounded-2xl"><p class="font-bold text-white">Dr. Mujib Ullah Khondokar</p><p class="text-slate-300/80">Director, Gonoshasthaya Kendra</p></div>
-          <div class="p-4 custom-subcard border border-indigo-800/40 rounded-2xl"><p class="font-bold text-white">Prof. Dr. Kazi Habibur Rahman</p><p class="text-slate-300/80">Principal, GSVMC</p></div>
-          <div class="p-4 custom-subcard border border-indigo-800/40 rounded-2xl"><p class="font-bold text-white">Dr. Manzur Kadir Ahmed</p><p class="text-slate-300/80">MD, Gonoshasthaya Pharmaceuticals Ltd.</p></div>
-          <div class="p-4 custom-subcard border border-indigo-800/40 rounded-2xl sm:col-span-2 lg:col-span-3 text-center"><p class="font-bold text-white">Dr. Aminul Islam</p><p class="text-slate-300/80">Director, GSVMC Hospital</p></div>
+      <!-- Special Guests (Organized 3 IN A LINE on desktop) -->
+      <div class="custom-mesh-card border border-indigo-900/50 rounded-3xl p-6 sm:p-8 max-w-6xl mx-auto mb-8">
+        <h4 class="text-sm font-bold uppercase tracking-wider text-red-400 mb-6 text-center">বিশেষ অতিথি</h4>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-xs">
+          <!-- 1 -->
+          <div class="p-4 custom-subcard border border-indigo-800/40 rounded-2xl flex flex-col justify-between">
+            <h5 class="font-bold text-white text-sm">অধ্যাপক ড. মোঃ আবুল হোসেন</h5>
+            <p class="text-slate-300/80 mt-1">উপাচার্য, গণ বিশ্ববিদ্যালয়</p>
+          </div>
+          <!-- 2 -->
+          <div class="p-4 custom-subcard border border-indigo-800/40 rounded-2xl flex flex-col justify-between">
+            <h5 class="font-bold text-white text-sm">অধ্যাপক ডা. মোঃ সায়েদুর রহমান</h5>
+            <p class="text-slate-300/80 mt-1">প্রকল্প সমন্বয়ক, গণস্বাস্থ্য কেন্দ্র • সাবেক উপাচার্য, বাংলাদেশ মেডিকেল বিশ্ববিদ্যালয়</p>
+          </div>
+          <!-- 3 -->
+          <div class="p-4 custom-subcard border border-indigo-800/40 rounded-2xl flex flex-col justify-between">
+            <h5 class="font-bold text-white text-sm">অধ্যাপক ডা. প্রভাত চন্দ্র বিশ্বাস</h5>
+            <p class="text-slate-300/80 mt-1">মহাপরিচালক, স্বাস্থ্য অধিদপ্তর</p>
+          </div>
+          <!-- 4 -->
+          <div class="p-4 custom-subcard border border-indigo-800/40 rounded-2xl flex flex-col justify-between">
+            <h5 class="font-bold text-white text-sm">অধ্যাপক ডা. নাজমুল হোসেন</h5>
+            <p class="text-slate-300/80 mt-1">মহাপরিচালক, স্বাস্থ্য শিক্ষা অধিদপ্তর</p>
+          </div>
+          <!-- 5 -->
+          <div class="p-4 custom-subcard border border-indigo-800/40 rounded-2xl flex flex-col justify-between">
+            <h5 class="font-bold text-white text-sm">প্রফেসর ডা. কোহরা তাসমিন</h5>
+            <p class="text-slate-300/80 mt-1">অতিরিক্ত মহাপরিচালক, (চিকিৎসা ও উন্নয়ন), স্বাস্থ্য অধিদপ্তর</p>
+          </div>
+          <!-- 6 -->
+          <div class="p-4 custom-subcard border border-indigo-800/40 rounded-2xl flex flex-col justify-between">
+            <h5 class="font-bold text-white text-sm">এ.এইচ.এম সফিকুজ্জামান</h5>
+            <p class="text-slate-300/80 mt-1">প্রধান নির্বাহী কর্মকর্তা, গণস্বাস্থ্য কেন্দ্র</p>
+          </div>
+          <!-- 7 -->
+          <div class="p-4 custom-subcard border border-indigo-800/40 rounded-2xl flex flex-col justify-between">
+            <h5 class="font-bold text-white text-sm">ডা. মোঃ ফজলে বারী</h5>
+            <p class="text-slate-300/80 mt-1">উপজেলা স্বাস্থ্য ও পরিবার পরিকল্পনা কর্মকর্তা, সাভার</p>
+          </div>
+          <!-- 8 -->
+          <div class="p-4 custom-subcard border border-indigo-800/40 rounded-2xl flex flex-col justify-between">
+            <h5 class="font-bold text-white text-sm">ডা. মুজিব উল্লাহ খোন্দকার</h5>
+            <p class="text-slate-300/80 mt-1">পরিচালক, গণস্বাস্থ্য কেন্দ্র</p>
+          </div>
+          <!-- 9 -->
+          <div class="p-4 custom-subcard border border-indigo-800/40 rounded-2xl flex flex-col justify-between">
+            <h5 class="font-bold text-white text-sm">ডা. মনজুর কাদির আহমেদ</h5>
+            <p class="text-slate-300/80 mt-1">ব্যবস্থাপনা পরিচালক, গণস্বাস্থ্য ফার্মাসিউটিক্যালস লিমিটেড</p>
+          </div>
+          <!-- 10 -->
+          <div class="p-4 custom-subcard border border-indigo-800/40 rounded-2xl flex flex-col justify-between">
+            <h5 class="font-bold text-white text-sm">অধ্যাপক ডা. কাজী হাবিবুর রহমান</h5>
+            <p class="text-slate-300/80 mt-1">অধ্যক্ষ, গণস্বাস্থ্য সমাজভিত্তিক মেডিকেল কলেজ</p>
+          </div>
+          <!-- 11 -->
+          <div class="p-4 custom-subcard border border-indigo-800/40 rounded-2xl flex flex-col justify-between md:col-span-2 lg:col-span-2">
+            <h5 class="font-bold text-white text-sm">ডা. আমিনুল ইসলাম</h5>
+            <p class="text-slate-300/80 mt-1">পরিচালক, গণস্বাস্থ্য সমাজভিত্তিক মেডিকেল কলেজ হাসপাতাল</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Presidium & Anchoring Card -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto text-xs text-center">
+        <div class="p-4 custom-subcard border border-indigo-900/50 rounded-2xl">
+          <span class="text-red-400 font-bold block uppercase tracking-wider mb-1">সভাপতি</span>
+          <p class="text-sm font-bold text-white">মোঃ রাকিবুল ইসলাম অন্তর</p>
+          <p class="text-slate-400 mt-0.5">সভাপতি, মেডিসিন ক্লাব কেন্দ্রীয় পরিষদ (২৪-২৫)</p>
+        </div>
+        <div class="p-4 custom-subcard border border-indigo-900/50 rounded-2xl">
+          <span class="text-red-400 font-bold block uppercase tracking-wider mb-1">সঞ্চালক</span>
+          <p class="text-sm font-bold text-white">অর্পণ কর্মকার শৌর্য</p>
+          <p class="text-slate-400 mt-0.5">সাধারণ সম্পাদক, মেডিসিন ক্লাব কেন্দ্রীয় পরিষদ (২৪-২৫)</p>
         </div>
       </div>
     </div>
@@ -534,10 +649,10 @@
 
       <!-- Category Filter Tabs -->
       <div class="flex flex-wrap justify-center items-center gap-2 sm:gap-3 mb-10 text-xs font-semibold">
-        <button onclick="filterHeritage('all')" id="tab-all" class="heritage-tab-btn px-4 py-2 rounded-xl bg-red-600 text-white transition shadow-sm">All Highlights (17)</button>
-        <button onclick="filterHeritage('rallies')" id="tab-rallies" class="heritage-tab-btn px-4 py-2 rounded-xl custom-subcard text-slate-300 hover:text-white border border-indigo-800/40 transition">Grand Rallies</button>
-        <button onclick="filterHeritage('assemblies')" id="tab-assemblies" class="heritage-tab-btn px-4 py-2 rounded-xl custom-subcard text-slate-300 hover:text-white border border-indigo-800/40 transition">Assemblies & Relief</button>
-        <button onclick="filterHeritage('cultural')" id="tab-cultural" class="heritage-tab-btn px-4 py-2 rounded-xl custom-subcard text-slate-300 hover:text-white border border-indigo-800/40 transition">Cultural Moments</button>
+        <button onclick="filterHeritage('all')" id="tab-all" class="heritage-tab-btn px-4 py-2 rounded-xl bg-red-600 text-white transition shadow-sm cursor-pointer">All Highlights (17)</button>
+        <button onclick="filterHeritage('rallies')" id="tab-rallies" class="heritage-tab-btn px-4 py-2 rounded-xl custom-subcard text-slate-300 hover:text-white border border-indigo-800/40 transition cursor-pointer">Grand Rallies</button>
+        <button onclick="filterHeritage('assemblies')" id="tab-assemblies" class="heritage-tab-btn px-4 py-2 rounded-xl custom-subcard text-slate-300 hover:text-white border border-indigo-800/40 transition cursor-pointer">Assemblies & Relief</button>
+        <button onclick="filterHeritage('cultural')" id="tab-cultural" class="heritage-tab-btn px-4 py-2 rounded-xl custom-subcard text-slate-300 hover:text-white border border-indigo-800/40 transition cursor-pointer">Cultural Moments</button>
       </div>
 
       <!-- Responsive Heritage Image Grid -->
@@ -998,9 +1113,46 @@
       }
     }
 
-    // FULLSCREEN DYNAMIC CELEBRATION CONFETTI ENGINE
+    // FULLSCREEN DYNAMIC CELEBRATION BALLOONS & CONFETTI ENGINE
     let confettiAnimationTimer = null;
+    let balloonInterval = null;
+
+    function createBalloon() {
+      const container = document.getElementById('balloonContainer');
+      if (!container) return;
+
+      const balloon = document.createElement('div');
+      balloon.className = 'balloon';
+
+      // Festive palette matching Medicine Club & convention
+      const colors = ['#dc2626', '#f59e0b', '#2563eb', '#10b981', '#ec4899', '#8b5cf6'];
+      const chosenColor = colors[Math.floor(Math.random() * colors.length)];
+      balloon.style.backgroundColor = chosenColor;
+      balloon.style.boxShadow = `inset -5px -5px 12px rgba(0,0,0,0.3), 0 0 15px ${chosenColor}88`;
+
+      // Random horizontal position and size variation
+      const leftPos = Math.random() * 95;
+      const sizeMultiplier = 0.8 + Math.random() * 0.5;
+      balloon.style.left = leftPos + 'vw';
+      balloon.style.width = (48 * sizeMultiplier) + 'px';
+      balloon.style.height = (62 * sizeMultiplier) + 'px';
+      balloon.style.animationDuration = (3.5 + Math.random() * 2) + 's';
+
+      container.appendChild(balloon);
+
+      // Remove after animation finishes
+      setTimeout(() => {
+        balloon.remove();
+      }, 5500);
+    }
+
     function startAutomaticCelebration() {
+      // Spawn lots of floating balloons
+      for (let i = 0; i < 15; i++) {
+        setTimeout(createBalloon, i * 180);
+      }
+      balloonInterval = setInterval(createBalloon, 250);
+
       const myCanvas = document.getElementById('confettiCanvas');
       if (!myCanvas || typeof confetti === 'undefined') return;
 
@@ -1009,29 +1161,31 @@
         useWorker: true
       });
 
-      const duration = 4000;
+      const duration = 4500;
       const end = Date.now() + duration;
       const colors = ['#dc2626', '#f59e0b', '#3b82f6', '#10b981', '#ec4899', '#ffffff'];
 
       (function frame() {
+        // High density showers from both top corners
         myConfetti({
-          particleCount: 4,
+          particleCount: 5,
           angle: 60,
-          spread: 75,
+          spread: 80,
           origin: { x: 0, y: 0.1 },
           colors: colors
         });
         myConfetti({
-          particleCount: 4,
+          particleCount: 5,
           angle: 120,
-          spread: 75,
+          spread: 80,
           origin: { x: 1, y: 0.1 },
           colors: colors
         });
-        if (Math.random() < 0.2) {
+        // Regular bursts in the center around the emblem
+        if (Math.random() < 0.25) {
           myConfetti({
-            particleCount: 15,
-            spread: 100,
+            particleCount: 20,
+            spread: 120,
             origin: { x: 0.5, y: 0.5 },
             colors: colors
           });
@@ -1043,11 +1197,12 @@
 
       confettiAnimationTimer = setTimeout(() => {
         dismissCelebration();
-      }, 4500);
+      }, 5000);
     }
 
     function dismissCelebration() {
       clearTimeout(confettiAnimationTimer);
+      clearInterval(balloonInterval);
       const overlay = document.getElementById('celebrationOverlay');
       if (overlay) {
         overlay.classList.add('hide-overlay');
