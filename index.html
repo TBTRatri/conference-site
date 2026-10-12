@@ -14,14 +14,14 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   
   <!-- Canvas Confetti for Celebration Lightwork -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
 
   <style>
     body { 
-      font-family: 'Plus Jakarta Sans', 'Hind Siliguri', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       background: radial-gradient(circle at 85% 15%, #3b5cb8 0%, #15224a 35%, #070c1b 70%, #03060f 100%);
       background-attachment: fixed;
     }
@@ -124,6 +124,7 @@
         <!-- Desktop Links -->
         <div class="hidden xl:flex items-center gap-5 font-semibold text-sm text-slate-300">
           <a href="#schedule" class="hover:text-red-400 transition">Schedule</a>
+          <a href="#sponsor-spotlight" class="text-amber-400 hover:text-amber-300 transition flex items-center gap-1.5"><i class="fa-solid fa-award"></i> Sponsor</a>
           <a href="#guests" class="hover:text-red-400 transition">Dignitaries</a>
           <a href="#fees" class="hover:text-red-400 transition">Registration Fees</a>
           <a href="#units" class="hover:text-red-400 transition">Units (34)</a>
@@ -153,9 +154,12 @@
       </div>
     </div>
 
-    <!-- Mobile Navigation Drawer (BRACU Style Full Column) -->
+    <!-- Mobile Navigation Drawer -->
     <div id="mobileMenu" class="hidden xl:hidden bg-[#050a18]/98 border-b border-indigo-900/60 px-6 py-4 space-y-2.5 transition-all duration-300">
       <div class="flex flex-col divide-y divide-indigo-950 text-sm font-semibold">
+        <a href="#sponsor-spotlight" onclick="toggleMobileMenu()" class="py-2.5 text-amber-400 hover:text-amber-300 flex justify-between items-center">
+          <span>Official Academic Sponsor</span><i class="fa-solid fa-award text-xs"></i>
+        </a>
         <a href="#schedule" onclick="toggleMobileMenu()" class="py-2.5 text-slate-200 hover:text-red-400 flex justify-between items-center">
           <span>Schedule</span><i class="fa-solid fa-chevron-right text-[10px] text-slate-500"></i>
         </a>
@@ -255,7 +259,7 @@
         </div>
       </div>
 
-      <div class="flex flex-wrap justify-center gap-4">
+      <div class="flex flex-wrap justify-center gap-4 mb-14">
         <a href="https://forms.gle/yifQK8Sw6WMCkWch6" target="_blank" rel="noopener noreferrer" class="px-8 py-4 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold transition shadow-xl shadow-red-950/60 flex items-center gap-3 text-base">
           <i class="fa-solid fa-file-pen"></i>
           <span>Fill Google Registration Form</span>
@@ -265,6 +269,55 @@
           <span>Official Invitation Letter</span>
         </button>
       </div>
+
+      <!-- HIGHLIGHTED FRONT SPONSOR SHOWCASE (BITMIR POST GRADUATE ULTRASOUND INSTITUTE) -->
+      <div id="sponsor-spotlight" class="max-w-4xl mx-auto rounded-3xl bg-gradient-to-r from-red-950/40 via-[#0a1533]/90 to-indigo-950/50 border-2 border-amber-500/50 p-6 sm:p-8 shadow-2xl relative overflow-hidden text-left">
+        <div class="absolute -top-12 -right-12 w-48 h-48 bg-amber-500/10 rounded-full blur-2xl pointer-events-none"></div>
+        
+        <div class="flex items-center gap-2 mb-4">
+          <span class="px-3 py-1 bg-amber-500/20 text-amber-300 border border-amber-400/40 rounded-full text-[11px] font-extrabold uppercase tracking-widest flex items-center gap-1.5 shadow-sm">
+            <i class="fa-solid fa-crown text-amber-400"></i> Official Academic Sponsor
+          </span>
+          <span class="text-xs text-slate-400 font-semibold">• 27th Central Conference 2026</span>
+        </div>
+
+        <div class="flex flex-col md:flex-row items-center gap-6">
+          <!-- Sponsor Logo & Admission Banner Preview -->
+          <div class="flex items-center gap-4 w-full md:w-auto shrink-0 justify-center">
+            <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-white p-2 flex items-center justify-center shadow-xl border border-slate-200">
+              <img src="./FB_IMG_1791786692153.jpg" alt="BITMIR Logo" class="w-full h-full object-contain">
+            </div>
+            <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden shadow-xl border border-indigo-500/40 cursor-pointer group relative" onclick="openPhotoViewer('./FB_IMG_1791786852228.jpg', 'BITMIR - Advance Diploma in Medical Ultrasound (ADMU) Admission')">
+              <img src="./FB_IMG_1791786852228.jpg" alt="BITMIR ADMU Admission Flyer" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition text-white text-xs font-bold">
+                <i class="fa-solid fa-magnifying-glass-plus text-sm"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sponsor Description & Quick Actions -->
+          <div class="flex-1 text-center md:text-left">
+            <h3 class="text-xl sm:text-2xl font-black text-white leading-tight">
+              BITMIR <span class="text-amber-400 text-sm sm:text-base font-semibold block sm:inline sm:ml-2">Post Graduate Ultrasound Institute</span>
+            </h3>
+            <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+              <strong>Advance Diploma in Medical Ultrasound (ADMU)</strong> • 21 Years of Excellence in Ultrasound, Color Doppler & 4D Training. Admission is currently open for batches ADMU-89 (Friday: 16-10-26) & ADMU-90 (Saturday: 17-10-26).
+            </p>
+            <div class="mt-4 flex flex-wrap items-center justify-center md:justify-start gap-3">
+              <a href="https://www.facebook.com/share/14ZZyizhdFA/" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs flex items-center gap-2 transition shadow-lg shadow-blue-950/60">
+                <i class="fa-brands fa-facebook-f"></i>
+                <span>View Official Facebook Post</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </a>
+              <button onclick="openPhotoViewer('./FB_IMG_1791786852228.jpg', 'BITMIR - Advance Diploma in Medical Ultrasound (ADMU) Admission')" class="px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 font-semibold text-xs flex items-center gap-2 transition cursor-pointer">
+                <i class="fa-solid fa-image text-amber-400"></i>
+                <span>View Full Flyer</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -390,97 +443,97 @@
     </div>
   </section>
 
-  <!-- Guests & Dignitaries (OFFICIAL INVITATION CARD ALIGNED) -->
+  <!-- GUESTS & DIGNITARIES (ENGLISH TRANSLATION WITH 3-IN-A-ROW GRID) -->
   <section id="guests" class="py-20 border-b border-indigo-950/60 relative z-10">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-14">
-        <span class="text-xs font-bold uppercase text-red-400 tracking-wider">সম্মেলন অতিথি ও গুণীজন</span>
-        <h2 class="text-3xl font-extrabold text-white mt-1">Honorable Dignitaries</h2>
-        <p class="text-slate-400 text-xs sm:text-sm mt-1">২৬তম বার্ষিক সম্মেলন পরবর্তী ২৭তম কেন্দ্রীয় সম্মেলন ২০২৬</p>
+        <span class="text-xs font-bold uppercase text-red-400 tracking-wider">Conference Dignitaries</span>
+        <h2 class="text-3xl font-extrabold text-white mt-1">Guests of Honor & Presidium</h2>
+        <p class="text-slate-400 text-xs sm:text-sm mt-1">Official Executive Invitation Schedule for the 27th Central Conference 2026</p>
       </div>
 
       <!-- Chief Guest & Inaugurator -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-10">
         <!-- Chief Guest -->
         <div class="p-6 custom-mesh-card border border-indigo-800/40 rounded-3xl shadow-lg">
-          <span class="px-3 py-1 bg-red-950/80 text-red-400 border border-red-700/60 text-xs font-bold rounded-full mb-3 inline-block">প্রধান অতিথি</span>
-          <h3 class="text-xl font-bold text-white">ডা. দেওয়ান মোহাম্মদ সালাউদ্দিন এমপি</h3>
-          <p class="text-sm text-red-400 font-semibold mt-1">মাননীয় সংসদ সদস্য, ঢাকা-১৯</p>
+          <span class="px-3 py-1 bg-red-950/80 text-red-400 border border-red-700/60 text-xs font-bold rounded-full mb-3 inline-block uppercase">Chief Guest</span>
+          <h3 class="text-xl font-bold text-white">Dr. Dewan Mohammad Salauddin MP</h3>
+          <p class="text-sm text-red-400 font-semibold mt-1">Honorable Member of Parliament, Dhaka-19</p>
           <p class="text-xs text-slate-300/90 mt-2 leading-relaxed">
-            সহ-পরিবার কল্যাণ বিষয়ক সম্পাদক, বাংলাদেশ জাতীয়তাবাদী দল (বিএনপি) • সাবেক সভাপতি, ঢাকা জেলা বিএনপি
+            Assistant Family Welfare Secretary, Bangladesh Nationalist Party (BNP) • Former President, Dhaka District BNP
           </p>
         </div>
 
         <!-- Inaugurator -->
         <div class="p-6 custom-mesh-card border border-indigo-800/40 rounded-3xl shadow-lg">
-          <span class="px-3 py-1 bg-red-950/80 text-red-400 border border-red-700/60 text-xs font-bold rounded-full mb-3 inline-block">উদ্বোধক</span>
-          <h3 class="text-xl font-bold text-white">অধ্যাপক ডা. মোহাম্মদ রফিকুল ইসলাম</h3>
-          <p class="text-sm text-red-400 font-semibold mt-1">স্বাস্থ্য বিষয়ক সম্পাদক, বিএনপি</p>
+          <span class="px-3 py-1 bg-red-950/80 text-red-400 border border-red-700/60 text-xs font-bold rounded-full mb-3 inline-block uppercase">Inaugurator</span>
+          <h3 class="text-xl font-bold text-white">Prof. Dr. Mohammad Rafiqul Islam</h3>
+          <p class="text-sm text-red-400 font-semibold mt-1">Health Affairs Secretary, BNP</p>
           <p class="text-xs text-slate-300/90 mt-2 leading-relaxed">
-            অধ্যাপক, ইউরোলজি বিভাগ, বাংলাদেশ মেডিকেল বিশ্ববিদ্যালয়
+            Professor, Department of Urology, Bangladesh Medical University
           </p>
         </div>
       </div>
 
-      <!-- Special Guests (Organized 3 IN A LINE on desktop) -->
+      <!-- Special Guests (3-IN-A-ROW DESKTOP GRID) -->
       <div class="custom-mesh-card border border-indigo-900/50 rounded-3xl p-6 sm:p-8 max-w-6xl mx-auto mb-8">
-        <h4 class="text-sm font-bold uppercase tracking-wider text-red-400 mb-6 text-center">বিশেষ অতিথি</h4>
+        <h4 class="text-sm font-bold uppercase tracking-wider text-red-400 mb-6 text-center">Special Guests</h4>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-xs">
           <!-- 1 -->
           <div class="p-4 custom-subcard border border-indigo-800/40 rounded-2xl flex flex-col justify-between">
-            <h5 class="font-bold text-white text-sm">অধ্যাপক ড. মোঃ আবুল হোসেন</h5>
-            <p class="text-slate-300/80 mt-1">উপাচার্য, গণ বিশ্ববিদ্যালয়</p>
+            <h5 class="font-bold text-white text-sm">Prof. Dr. Md. Abul Hossain</h5>
+            <p class="text-slate-300/80 mt-1">Vice-Chancellor, Gono Bishwabidyalay</p>
           </div>
           <!-- 2 -->
           <div class="p-4 custom-subcard border border-indigo-800/40 rounded-2xl flex flex-col justify-between">
-            <h5 class="font-bold text-white text-sm">অধ্যাপক ডা. মোঃ সায়েদুর রহমান</h5>
-            <p class="text-slate-300/80 mt-1">প্রকল্প সমন্বয়ক, গণস্বাস্থ্য কেন্দ্র • সাবেক উপাচার্য, বাংলাদেশ মেডিকেল বিশ্ববিদ্যালয়</p>
+            <h5 class="font-bold text-white text-sm">Prof. Dr. Md. Sayedur Rahman</h5>
+            <p class="text-slate-300/80 mt-1">Project Coordinator, Gonoshasthaya Kendra • Former VC, Bangladesh Medical University</p>
           </div>
           <!-- 3 -->
           <div class="p-4 custom-subcard border border-indigo-800/40 rounded-2xl flex flex-col justify-between">
-            <h5 class="font-bold text-white text-sm">অধ্যাপক ডা. প্রভাত চন্দ্র বিশ্বাস</h5>
-            <p class="text-slate-300/80 mt-1">মহাপরিচালক, স্বাস্থ্য অধিদপ্তর</p>
+            <h5 class="font-bold text-white text-sm">Prof. Dr. Provat Chandra Biswas</h5>
+            <p class="text-slate-300/80 mt-1">Director General, Directorate General of Health Services (DGHS)</p>
           </div>
           <!-- 4 -->
           <div class="p-4 custom-subcard border border-indigo-800/40 rounded-2xl flex flex-col justify-between">
-            <h5 class="font-bold text-white text-sm">অধ্যাপক ডা. নাজমুল হোসেন</h5>
-            <p class="text-slate-300/80 mt-1">মহাপরিচালক, স্বাস্থ্য শিক্ষা অধিদপ্তর</p>
+            <h5 class="font-bold text-white text-sm">Prof. Dr. Nazmul Hossain</h5>
+            <p class="text-slate-300/80 mt-1">Director General, Directorate General of Medical Education (DGME)</p>
           </div>
           <!-- 5 -->
           <div class="p-4 custom-subcard border border-indigo-800/40 rounded-2xl flex flex-col justify-between">
-            <h5 class="font-bold text-white text-sm">প্রফেসর ডা. কোহরা তাসমিন</h5>
-            <p class="text-slate-300/80 mt-1">অতিরিক্ত মহাপরিচালক, (চিকিৎসা ও উন্নয়ন), স্বাস্থ্য অধিদপ্তর</p>
+            <h5 class="font-bold text-white text-sm">Prof. Dr. Kohra Tasmin</h5>
+            <p class="text-slate-300/80 mt-1">Additional Director General (Treatment & Development), DGHS</p>
           </div>
           <!-- 6 -->
           <div class="p-4 custom-subcard border border-indigo-800/40 rounded-2xl flex flex-col justify-between">
-            <h5 class="font-bold text-white text-sm">এ.এইচ.এম সফিকুজ্জামান</h5>
-            <p class="text-slate-300/80 mt-1">প্রধান নির্বাহী কর্মকর্তা, গণস্বাস্থ্য কেন্দ্র</p>
+            <h5 class="font-bold text-white text-sm">A. H. M. Shafiquzzaman</h5>
+            <p class="text-slate-300/80 mt-1">Chief Executive Officer, Gonoshasthaya Kendra</p>
           </div>
           <!-- 7 -->
           <div class="p-4 custom-subcard border border-indigo-800/40 rounded-2xl flex flex-col justify-between">
-            <h5 class="font-bold text-white text-sm">ডা. মোঃ ফজলে বারী</h5>
-            <p class="text-slate-300/80 mt-1">উপজেলা স্বাস্থ্য ও পরিবার পরিকল্পনা কর্মকর্তা, সাভার</p>
+            <h5 class="font-bold text-white text-sm">Dr. Md. Fazle Bari</h5>
+            <p class="text-slate-300/80 mt-1">Upazila Health & Family Planning Officer (UH&FPO), Savar</p>
           </div>
           <!-- 8 -->
           <div class="p-4 custom-subcard border border-indigo-800/40 rounded-2xl flex flex-col justify-between">
-            <h5 class="font-bold text-white text-sm">ডা. মুজিব উল্লাহ খোন্দকার</h5>
-            <p class="text-slate-300/80 mt-1">পরিচালক, গণস্বাস্থ্য কেন্দ্র</p>
+            <h5 class="font-bold text-white text-sm">Dr. Mujib Ullah Khondokar</h5>
+            <p class="text-slate-300/80 mt-1">Director, Gonoshasthaya Kendra</p>
           </div>
           <!-- 9 -->
           <div class="p-4 custom-subcard border border-indigo-800/40 rounded-2xl flex flex-col justify-between">
-            <h5 class="font-bold text-white text-sm">ডা. মনজুর কাদির আহমেদ</h5>
-            <p class="text-slate-300/80 mt-1">ব্যবস্থাপনা পরিচালক, গণস্বাস্থ্য ফার্মাসিউটিক্যালস লিমিটেড</p>
+            <h5 class="font-bold text-white text-sm">Dr. Manzur Kadir Ahmed</h5>
+            <p class="text-slate-300/80 mt-1">Managing Director, Gonoshasthaya Pharmaceuticals Ltd.</p>
           </div>
           <!-- 10 -->
           <div class="p-4 custom-subcard border border-indigo-800/40 rounded-2xl flex flex-col justify-between">
-            <h5 class="font-bold text-white text-sm">অধ্যাপক ডা. কাজী হাবিবুর রহমান</h5>
-            <p class="text-slate-300/80 mt-1">অধ্যক্ষ, গণস্বাস্থ্য সমাজভিত্তিক মেডিকেল কলেজ</p>
+            <h5 class="font-bold text-white text-sm">Prof. Dr. Kazi Habibur Rahman</h5>
+            <p class="text-slate-300/80 mt-1">Principal, Gonoshasthaya Samajvittik Medical College</p>
           </div>
           <!-- 11 -->
           <div class="p-4 custom-subcard border border-indigo-800/40 rounded-2xl flex flex-col justify-between md:col-span-2 lg:col-span-2">
-            <h5 class="font-bold text-white text-sm">ডা. আমিনুল ইসলাম</h5>
-            <p class="text-slate-300/80 mt-1">পরিচালক, গণস্বাস্থ্য সমাজভিত্তিক মেডিকেল কলেজ হাসপাতাল</p>
+            <h5 class="font-bold text-white text-sm">Dr. Aminul Islam</h5>
+            <p class="text-slate-300/80 mt-1">Director, Gonoshasthaya Samajvittik Medical College Hospital</p>
           </div>
         </div>
       </div>
@@ -488,14 +541,14 @@
       <!-- Presidium & Anchoring Card -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto text-xs text-center">
         <div class="p-4 custom-subcard border border-indigo-900/50 rounded-2xl">
-          <span class="text-red-400 font-bold block uppercase tracking-wider mb-1">সভাপতি</span>
-          <p class="text-sm font-bold text-white">মোঃ রাকিবুল ইসলাম অন্তর</p>
-          <p class="text-slate-400 mt-0.5">সভাপতি, মেডিসিন ক্লাব কেন্দ্রীয় পরিষদ (২৪-২৫)</p>
+          <span class="text-red-400 font-bold block uppercase tracking-wider mb-1">Presided By</span>
+          <p class="text-sm font-bold text-white">Md. Rakibul Islam Antor</p>
+          <p class="text-slate-400 mt-0.5">President, Medicine Club Central Committee (2024–2025)</p>
         </div>
         <div class="p-4 custom-subcard border border-indigo-900/50 rounded-2xl">
-          <span class="text-red-400 font-bold block uppercase tracking-wider mb-1">সঞ্চালক</span>
-          <p class="text-sm font-bold text-white">অর্পণ কর্মকার শৌর্য</p>
-          <p class="text-slate-400 mt-0.5">সাধারণ সম্পাদক, মেডিসিন ক্লাব কেন্দ্রীয় পরিষদ (২৪-২৫)</p>
+          <span class="text-red-400 font-bold block uppercase tracking-wider mb-1">Anchored By</span>
+          <p class="text-sm font-bold text-white">Arpan Karmakar Shourya</p>
+          <p class="text-slate-400 mt-0.5">General Secretary, Medicine Club Central Committee (2024–2025)</p>
         </div>
       </div>
     </div>
@@ -914,38 +967,6 @@
     </div>
   </section>
 
-  <!-- Sponsorship Section -->
-  <section id="sponsorship" class="py-20 border-b border-indigo-950/60 text-white relative z-10">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <span class="text-xs font-bold uppercase text-red-400 tracking-wider">Partnership Opportunities</span>
-      <h2 class="text-3xl sm:text-4xl font-extrabold mt-1 mb-4">Partner with the 27th Central Conference</h2>
-      <p class="text-slate-300 text-sm max-w-2xl mx-auto mb-10 leading-relaxed">
-        Connect your organization with over 1,000 emerging physicians, medical specialists, and leaders from 34 medical institutions across Bangladesh.
-      </p>
-
-      <div class="custom-mesh-card border border-indigo-800/50 rounded-3xl p-8 sm:p-10 shadow-2xl max-w-2xl mx-auto">
-        <div class="w-16 h-16 rounded-2xl bg-red-950/80 border border-red-600/30 text-red-400 flex items-center justify-center text-3xl mx-auto mb-6">
-          <i class="fa-solid fa-handshake"></i>
-        </div>
-        <h3 class="text-2xl font-bold text-white mb-2">Become an Official Sponsor</h3>
-        <p class="text-xs text-slate-400 mb-8 leading-relaxed">
-          Comprehensive branding available across rally apparel, delegate souvenirs, seminar halls, and nationwide media press releases.
-        </p>
-        
-        <div class="flex flex-col sm:flex-row justify-center gap-4">
-          <a href="tel:01998608723" class="px-8 py-3.5 bg-red-600 hover:bg-red-500 text-white font-bold rounded-xl text-sm transition shadow-lg shadow-red-950/60 flex items-center justify-center gap-2">
-            <i class="fa-solid fa-phone"></i>
-            <span>Apply for Sponsorship</span>
-          </a>
-          <button onclick="window.print()" class="px-6 py-3.5 custom-subcard hover:bg-indigo-900/50 text-slate-200 font-semibold rounded-xl text-sm transition border border-indigo-700/50 flex items-center justify-center gap-2 cursor-pointer">
-            <i class="fa-solid fa-print"></i>
-            <span>Print Sponsor Agreement</span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Inquiry & Contact Desk -->
   <section id="contact" class="py-16 border-b border-indigo-950/60 relative z-10">
     <div class="max-w-6xl mx-auto px-4 text-center">
@@ -1086,13 +1107,13 @@
     </div>
   </div>
 
-  <!-- Interactive Heritage Photo Viewer Modal -->
+  <!-- Interactive Image Viewer Modal (Shared for Heritage Photos and Sponsor Flyers) -->
   <div id="photoModal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-md flex items-center justify-center p-3 sm:p-6" onclick="closePhotoViewer()">
     <div class="relative max-w-4xl max-h-[90vh] flex flex-col items-center" onclick="event.stopPropagation()">
       <button onclick="closePhotoViewer()" class="absolute -top-12 right-0 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition cursor-pointer">
         <i class="fa-solid fa-xmark text-sm"></i>
       </button>
-      <img id="photoModalImg" src="" alt="Medicine Club Heritage" class="max-w-full max-h-[75vh] rounded-2xl object-contain shadow-2xl border border-indigo-800/40">
+      <img id="photoModalImg" src="" alt="Conference Showcase" class="max-w-full max-h-[75vh] rounded-2xl object-contain shadow-2xl border border-indigo-800/40">
       <p id="photoModalCaption" class="text-slate-200 text-xs sm:text-sm font-semibold mt-4 text-center px-4"></p>
     </div>
   </div>
@@ -1124,13 +1145,11 @@
       const balloon = document.createElement('div');
       balloon.className = 'balloon';
 
-      // Festive palette matching Medicine Club & convention
       const colors = ['#dc2626', '#f59e0b', '#2563eb', '#10b981', '#ec4899', '#8b5cf6'];
       const chosenColor = colors[Math.floor(Math.random() * colors.length)];
       balloon.style.backgroundColor = chosenColor;
       balloon.style.boxShadow = `inset -5px -5px 12px rgba(0,0,0,0.3), 0 0 15px ${chosenColor}88`;
 
-      // Random horizontal position and size variation
       const leftPos = Math.random() * 95;
       const sizeMultiplier = 0.8 + Math.random() * 0.5;
       balloon.style.left = leftPos + 'vw';
@@ -1140,18 +1159,16 @@
 
       container.appendChild(balloon);
 
-      // Remove after animation finishes
       setTimeout(() => {
         balloon.remove();
       }, 5500);
     }
 
     function startAutomaticCelebration() {
-      // Spawn lots of floating balloons
-      for (let i = 0; i < 15; i++) {
-        setTimeout(createBalloon, i * 180);
+      for (let i = 0; i < 20; i++) {
+        setTimeout(createBalloon, i * 140);
       }
-      balloonInterval = setInterval(createBalloon, 250);
+      balloonInterval = setInterval(createBalloon, 220);
 
       const myCanvas = document.getElementById('confettiCanvas');
       if (!myCanvas || typeof confetti === 'undefined') return;
@@ -1166,7 +1183,6 @@
       const colors = ['#dc2626', '#f59e0b', '#3b82f6', '#10b981', '#ec4899', '#ffffff'];
 
       (function frame() {
-        // High density showers from both top corners
         myConfetti({
           particleCount: 5,
           angle: 60,
@@ -1181,7 +1197,6 @@
           origin: { x: 1, y: 0.1 },
           colors: colors
         });
-        // Regular bursts in the center around the emblem
         if (Math.random() < 0.25) {
           myConfetti({
             particleCount: 20,
@@ -1235,7 +1250,7 @@
       });
     }
 
-    // Photo Modal Viewer
+    // Modal Image Viewer
     function openPhotoViewer(src, caption) {
       document.getElementById('photoModalImg').src = src;
       document.getElementById('photoModalCaption').innerText = caption;
